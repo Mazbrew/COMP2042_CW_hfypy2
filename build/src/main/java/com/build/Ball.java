@@ -4,10 +4,6 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.RectangularShape;
 
-/**
- * Created by filippo on 04/09/16.
- *
- */
 abstract public class Ball {
 
     private Shape ballFace;
