@@ -59,7 +59,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         
         wall.nextLevel();
 
-        gameTimer = new Timer(10,e ->{
+        gameTimer = new Timer(1,e ->{
             wall.move();
             wall.findImpacts();
             message = String.format("Bricks: %d Balls %d",wall.getBrickCount(),wall.getBallCount());

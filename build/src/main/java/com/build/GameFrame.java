@@ -1,4 +1,5 @@
 package com.build;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
@@ -7,7 +8,7 @@ import java.awt.event.WindowFocusListener;
 
 public class GameFrame extends JFrame implements WindowFocusListener {
 
-    private static final String DEF_TITLE = "Brick Destroy";
+    private static final String DEF_TITLE = "Brick Destroyer";
 
     private GameBoard gameBoard;
     private HomeMenu homeMenu;
@@ -19,25 +20,24 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
         gaming = false;
 
-        this.setLayout(new BorderLayout());
-
         gameBoard = new GameBoard(this);
+        
+        homeMenu = new HomeMenu(this);
 
-        homeMenu = new HomeMenu(this,new Dimension(450,300));
-
-        this.add(homeMenu,BorderLayout.CENTER);
-
-        this.setUndecorated(true);
-
-
+        this.add(homeMenu);
+        
     }
 
     public void initialize(){
         this.setTitle(DEF_TITLE);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.pack();
+        this.setSize(615,490);
         this.autoLocate();
+        this.setResizable(false);
         this.setVisible(true);
+
+        ImageIcon icon = new ImageIcon("build/src/sprites/brick.png");
+        this.setIconImage(icon.getImage());
     }
 
     public void enableGameBoard(){
@@ -46,9 +46,8 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.add(gameBoard,BorderLayout.CENTER);
         this.setUndecorated(false);
         initialize();
-        /*to avoid problems with graphics focus controller is added here*/
-        this.addWindowFocusListener(this);
 
+        this.addWindowFocusListener(this);
     }
 
     private void autoLocate(){
@@ -61,14 +60,6 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
     @Override
     public void windowGainedFocus(WindowEvent windowEvent) {
-        /*
-            the first time the frame loses focus is because
-            it has been disposed to install the GameBoard,
-            so went it regains the focus it's ready to play.
-            of course calling a method such as 'onLostFocus'
-            is useful only if the GameBoard as been displayed
-            at least once
-         */
         gaming = true;
     }
 
