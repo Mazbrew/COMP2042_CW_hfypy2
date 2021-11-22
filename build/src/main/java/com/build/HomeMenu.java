@@ -102,7 +102,7 @@ public class HomeMenu extends JLayeredPane{
                 Point p = mouseEvent.getPoint();
 
                 if(infobutton.contains(p)){
-                    owner.enableGameBoard();  
+                    owner.enableInfo();  
                 }                  
             }
 
@@ -121,7 +121,7 @@ public class HomeMenu extends JLayeredPane{
 
                 infobutton.setIcon(infobuttonsprite);
                 if(infobutton.contains(p)){
-                    owner.enableGameBoard();  
+                    owner.enableInfo();  
                 } 
             }
 
