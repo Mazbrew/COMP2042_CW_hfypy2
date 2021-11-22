@@ -10,9 +10,9 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
     private static final String DEF_TITLE = "Brick Destroyer";
 
-    private GameBoard gameBoard;
-    private HomeMenu homeMenu;
-    private infopage infopage;
+    private static GameBoard gameBoard;
+    private static HomeMenu homeMenu;
+    private static infopage infopage;
 
     private boolean gaming;
 
@@ -38,40 +38,28 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.autoLocate();
         this.setResizable(false);
         this.setVisible(true);
+        this.addWindowFocusListener(this);
 
         ImageIcon icon = new ImageIcon("build/src/sprites/brick.png");
         this.setIconImage(icon.getImage());
     }
 
     public void enableGameBoard(){
-        this.dispose();
         this.remove(homeMenu);
         this.add(gameBoard,BorderLayout.CENTER);
-        this.setUndecorated(false);
-        initialize();
-
-        this.addWindowFocusListener(this);
+        this.initialize();
     }
 
     public void enableInfo(){
-        this.dispose();
         this.remove(homeMenu);
         this.add(infopage,BorderLayout.CENTER);
-        this.setUndecorated(false);
-        initialize();
-
-        this.addWindowFocusListener(this);
+        this.initialize();
     }
 
     public void enableHomeMenu(){
-        this.dispose();
         this.remove(infopage);
         this.add(homeMenu,BorderLayout.CENTER);
-        this.setUndecorated(false);
-        initialize();
-
-        this.addWindowFocusListener(this);
-
+        this.initialize();
     }
 
     private void autoLocate(){
