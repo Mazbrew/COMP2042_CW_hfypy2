@@ -45,6 +45,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
     }
 
     public void enableGameBoard(){
+        this.dispose();
         this.remove(homeMenu);
         this.add(gameBoard,BorderLayout.CENTER);
         this.initialize();
