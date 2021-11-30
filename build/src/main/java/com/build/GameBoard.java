@@ -39,6 +39,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     private DebugConsole debugConsole;
 
+    private static boolean A_check;
+    private static boolean D_check;
+
 
     public GameBoard(JFrame owner){
         super();
@@ -254,10 +257,12 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     public void keyPressed(KeyEvent keyEvent) {
         switch(keyEvent.getKeyCode()){
             case KeyEvent.VK_A:
+                A_check = true;
                 wall.player.moveLeft();
                 break;
             case KeyEvent.VK_D:
-                wall.player.movRight();
+                D_check = true;
+                wall.player.moveRight();
                 break;
             case KeyEvent.VK_ESCAPE:
                 showPauseMenu = !showPauseMenu;
@@ -275,13 +280,34 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 if(keyEvent.isAltDown() && keyEvent.isShiftDown())
                     debugConsole.setVisible(true);
             default:
-                wall.player.stop();
+               
         }
     }
 
     @Override
     public void keyReleased(KeyEvent keyEvent) {
-        wall.player.stop();
+        switch(keyEvent.getKeyCode()){
+            case KeyEvent.VK_A:
+                A_check = false;
+                break;
+            case KeyEvent.VK_D:
+                D_check = false;
+                break;
+            default:
+               
+        }
+
+        if(A_check == false  && D_check == false){
+            wall.player.stop();
+        }
+
+        if(A_check== true && D_check == false){
+            wall.player.moveLeft();
+        }
+
+        if(D_check== true && A_check == false){
+            wall.player.moveRight();
+        }
     }
 
     @Override
