@@ -6,10 +6,10 @@ import java.awt.*;
 public class Player {
 
 
-    public static final Color BORDER_COLOR = Color.GREEN.darker().darker();
-    public static final Color INNER_COLOR = Color.GREEN;
+    public static final Color BORDER_COLOR = Color.lightGray.darker().darker();
+    public static final Color INNER_COLOR = Color.lightGray;
 
-    private static final int DEF_MOVE_AMOUNT = 5;
+    private static final int DEF_MOVE_AMOUNT = 8;
 
     private Rectangle playerFace;
     private Point ballPoint;

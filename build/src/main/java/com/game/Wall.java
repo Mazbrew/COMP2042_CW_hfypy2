@@ -2,7 +2,6 @@ package com.game;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
-import java.util.Random;
 
 
 public class Wall {
@@ -13,7 +12,6 @@ public class Wall {
     private static final int STEEL = 2;
     private static final int CEMENT = 3;
 
-    private Random rnd;
     private Rectangle area;
 
     Brick[] bricks;
@@ -38,18 +36,9 @@ public class Wall {
         ballCount = 3;
         ballLost = false;
 
-        rnd = new Random();
-
         makeBall(ballPos);
-        int speedX,speedY;
-        do{
-            speedX = rnd.nextInt(5 + 1 - 2) + 2;
-        }while(speedX == 0);
-        do{
-            speedY = -(rnd.nextInt(5 + 1 - 2) + 2);
-        }while(speedY == 0);
 
-        ball.setSpeed(speedX,speedY);
+        ball.setSpeed();
 
         player = new Player((Point) ballPos.clone(),150,10, drawArea);
 
@@ -226,15 +215,8 @@ public class Wall {
     public void ballReset(){
         player.moveTo(startPoint);
         ball.moveTo(startPoint);
-        int speedX,speedY;
-        do{
-            speedX = rnd.nextInt(5 + 1 - 2) + 2;
-        }while(speedX == 0);
-        do{
-            speedY = -(rnd.nextInt(5 + 1 - 2) + 2);
-        }while(speedY == 0);
 
-        ball.setSpeed(speedX,speedY);
+        ball.setSpeed();
         ballLost = false;
     }
 

@@ -3,6 +3,7 @@ package com.game;
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.RectangularShape;
+import java.util.Random;
 
 abstract public class Ball {
 
@@ -20,6 +21,8 @@ abstract public class Ball {
 
     private int speedX;
     private int speedY;
+
+    public Random rnd;
 
     public Ball(Point2D center,int radiusA,int radiusB,Color inner,Color border){
         this.center = center;
@@ -58,9 +61,16 @@ abstract public class Ball {
         ballFace = tmp;
     }
 
-    public void setSpeed(int x,int y){
-        speedX = x;
-        speedY = y;
+    public void setSpeed(){
+        rnd = new Random();
+        boolean chance= rnd.nextBoolean();
+
+        speedX = rnd.nextInt(5 + 1 - 2) + 2;
+        if(chance == true){
+            reverseX();
+        }
+        
+        speedY = -(rnd.nextInt(5 + 1 - 2) + 2);
     }
 
     public void setXSpeed(int s){
