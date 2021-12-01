@@ -12,14 +12,17 @@ public class Player {
     private static final int DEF_MOVE_AMOUNT = 8;
 
     private Rectangle playerFace;
-    private Point ballPoint;
+    private Point playerPoint;
     private int moveAmount;
     private int min;
     private int max;
 
+    private int width;
 
-    public Player(Point ballPoint,int width,int height,Rectangle container) {
-        this.ballPoint = ballPoint;
+
+    public Player(Point playerPoint,int width,int height,Rectangle container) {
+        this.width = width;
+        this.playerPoint = playerPoint;
         moveAmount = 0;
         playerFace = makeRectangle(width, height);
         min = container.x + (width / 2);
@@ -28,7 +31,7 @@ public class Player {
     }
 
     private Rectangle makeRectangle(int width,int height){
-        Point p = new Point((int)(ballPoint.getX() - (width / 2)),(int)ballPoint.getY());
+        Point p = new Point((int)(playerPoint.getX() - (width / 2)),(int)playerPoint.getY());
         return  new Rectangle(p,new Dimension(width,height));
     }
 
@@ -37,11 +40,17 @@ public class Player {
     }
 
     public void move(){
-        double x = ballPoint.getX() + moveAmount;
-        if(x < min || x > max)
+        double x = playerPoint.getX() + moveAmount;
+        if(x < min || x > max){
             return;
-        ballPoint.setLocation(x,ballPoint.getY());
-        playerFace.setLocation(ballPoint.x - (int)playerFace.getWidth()/2,ballPoint.y);
+        }else if(x-min < DEF_MOVE_AMOUNT){
+            x = width/2;
+        }else if(max-x < DEF_MOVE_AMOUNT){
+            x = max ;
+        }
+
+        playerPoint.setLocation(x,playerPoint.getY());
+        playerFace.setLocation(playerPoint.x - (int)playerFace.getWidth()/2,playerPoint.y);
     }
 
     public void moveLeft(){
@@ -61,7 +70,7 @@ public class Player {
     }
 
     public void moveTo(Point p){
-        ballPoint.setLocation(p);
-        playerFace.setLocation(ballPoint.x - (int)playerFace.getWidth()/2,ballPoint.y);
+        playerPoint.setLocation(p);
+        playerFace.setLocation(playerPoint.x - (int)playerFace.getWidth()/2,playerPoint.y);
     }
 }
