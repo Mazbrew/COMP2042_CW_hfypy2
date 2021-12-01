@@ -271,9 +271,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 break;
             case KeyEvent.VK_SPACE:
                 if(!showPauseMenu)
-                    if(gameTimer.isRunning())
-                        gameTimer.stop();
-                    else
+                    if(!gameTimer.isRunning())
                         gameTimer.start();
                 break;
             case KeyEvent.VK_F1:
