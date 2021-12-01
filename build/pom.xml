@@ -56,7 +56,7 @@
               <manifest>
                 <addClasspath>true</addClasspath>
                 <classpathPrefix>lib/</classpathPrefix>
-                <mainClass>com.build.GraphicsMain</mainClass>
+                <mainClass>com.game.GraphicsMain</mainClass>
               </manifest>
             </archive>
           </configuration>
