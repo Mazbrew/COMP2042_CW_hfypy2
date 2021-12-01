@@ -3,9 +3,10 @@ package com.game;
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.RectangularShape;
+import java.awt.geom.Ellipse2D;
 import java.util.Random;
 
-abstract public class Ball {
+public class Ball {
 
     private Shape ballFace;
 
@@ -16,15 +17,16 @@ abstract public class Ball {
     Point2D left;
     Point2D right;
 
-    private Color border;
-    private Color inner;
-
     private int speedX;
     private int speedY;
 
-    public Random rnd;
+    private Random rnd;
 
-    public Ball(Point2D center,int radiusA,int radiusB,Color inner,Color border){
+    private static final int DEF_RADIUS = 10;
+    private static final Color DEF_INNER_COLOR = new Color(255, 0, 0);
+    private static final Color DEF_BORDER_COLOR = Color.black;
+
+    public Ball(Point2D center){
         this.center = center;
 
         up = new Point2D.Double();
@@ -32,21 +34,25 @@ abstract public class Ball {
         left = new Point2D.Double();
         right = new Point2D.Double();
 
-        up.setLocation(center.getX(),center.getY()-(radiusB / 2));
-        down.setLocation(center.getX(),center.getY()+(radiusB / 2));
+        up.setLocation(center.getX(),center.getY()-(DEF_RADIUS / 2));
+        down.setLocation(center.getX(),center.getY()+(DEF_RADIUS / 2));
 
-        left.setLocation(center.getX()-(radiusA /2),center.getY());
-        right.setLocation(center.getX()+(radiusA /2),center.getY());
+        left.setLocation(center.getX()-(DEF_RADIUS /2),center.getY());
+        right.setLocation(center.getX()+(DEF_RADIUS /2),center.getY());
 
 
-        ballFace = makeBall(center,radiusA,radiusB);
-        this.border = border;
-        this.inner  = inner;
+        ballFace = makeBall(center,DEF_RADIUS);
         speedX = 0;
         speedY = 0;
     }
 
-    protected abstract Shape makeBall(Point2D center,int radiusA,int radiusB);
+    protected Shape makeBall(Point2D center,int DEF_RADIUS){
+
+        double x = center.getX() - (DEF_RADIUS / 2);
+        double y = center.getY() - (DEF_RADIUS / 2);
+
+        return new Ellipse2D.Double(x,y,DEF_RADIUS,DEF_RADIUS);
+    }
 
     public void move(){
         RectangularShape tmp = (RectangularShape) ballFace;
@@ -90,11 +96,11 @@ abstract public class Ball {
     }
 
     public Color getBorderColor(){
-        return border;
+        return DEF_BORDER_COLOR;
     }
 
     public Color getInnerColor(){
-        return inner;
+        return DEF_INNER_COLOR;
     }
 
     public Point2D getPosition(){
