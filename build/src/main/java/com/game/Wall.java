@@ -12,6 +12,8 @@ public class Wall {
     private static final int STEEL = 2;
     private static final int CEMENT = 3;
 
+    private static int bpcheck;
+
     private Rectangle area;
 
     Brick[] bricks;
@@ -151,7 +153,12 @@ public class Wall {
     }
 
     public void findImpacts(){
-        if(player.impact(ball)){
+        if(bpcheck!=0){
+            bpcheck--;
+        }
+       
+        if(player.impact(ball) && bpcheck==0){
+            bpcheck = 10;
             ball.reverseY();
         }
         else if(impactWall()){

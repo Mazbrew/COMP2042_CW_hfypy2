@@ -36,7 +36,7 @@ public class Player {
     }
 
     public boolean impact(Ball b){
-        return playerFace.contains(b.getPosition()) && playerFace.contains(b.down) ;
+        return playerFace.contains(b.getPosition());
     }
 
     public void move(){
