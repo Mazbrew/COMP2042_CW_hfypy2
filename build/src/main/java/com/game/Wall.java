@@ -6,11 +6,12 @@ import java.awt.geom.Point2D;
 
 public class Wall {
 
-    private static final int LEVELS_COUNT = 5;
+    private static final int LEVELS_COUNT = 6;
 
     private static final int CLAY = 1;
     private static final int STEEL = 2;
     private static final int CEMENT = 3;
+    private static final int SLIME = 4;
 
     private static int bpcheck;
 
@@ -137,6 +138,7 @@ public class Wall {
         tmp[2] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CEMENT);
         tmp[3] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,STEEL);
         tmp[4] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
+        tmp[5] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SLIME);
         return tmp;
     }
 
@@ -171,7 +173,7 @@ public class Wall {
 
     private boolean impactWall(){
         for(Brick b : bricks){
-            switch(b.findImpact(ball)) {
+            switch(b.findBrickImpact(ball)) {
                 case Brick.UP_IMPACT:
                     ball.reverseY();
                     return b.setImpact(ball.down, Crack.UP);
@@ -256,6 +258,9 @@ public class Wall {
                 break;
             case CEMENT:
                 out = new CementBrick(point, size);
+                break;
+            case SLIME:
+                out = new SlimeBrick(point,size);
                 break;
             default:
                 throw  new IllegalArgumentException(String.format("Unknown Type:%d\n",type));

@@ -21,6 +21,7 @@ public class Ball {
     private int speedY;
 
     private Random rnd;
+    private boolean chance;
 
     private static final int DEF_RADIUS = 10;
     private static final Color DEF_INNER_COLOR = new Color(255, 0, 0);
@@ -28,6 +29,8 @@ public class Ball {
 
     public Ball(Point2D center){
         this.center = center;
+
+        rnd = new Random();
 
         up = new Point2D.Double();
         down = new Point2D.Double();
@@ -68,8 +71,7 @@ public class Ball {
     }
 
     public void setSpeed(){
-        rnd = new Random();
-        boolean chance= rnd.nextBoolean();
+        chance= rnd.nextBoolean();
 
         speedX = rnd.nextInt(5 + 1 - 2) + 2;
         if(chance == true){
@@ -77,6 +79,22 @@ public class Ball {
         }
         
         speedY = -(rnd.nextInt(5 + 1 - 2) + 2);
+    }
+
+    public void setRandomX(){
+        chance = rnd.nextBoolean();
+        speedX = rnd.nextInt(5 + 1 - 2) + 2;
+        if(chance == true){
+            reverseX();
+        }
+    }
+
+    public void setRandomY(){
+        chance = rnd.nextBoolean();
+        speedY = rnd.nextInt(5 + 1 - 2) + 2;
+        if(chance == true){
+            reverseY();
+        }
     }
 
     public void setXSpeed(int s){

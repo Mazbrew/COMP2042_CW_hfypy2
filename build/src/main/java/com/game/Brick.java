@@ -52,7 +52,7 @@ abstract public class Brick {
     }
 
 
-    public final int findImpact(Ball b){
+    public int findBrickImpact(Ball b){
         if(broken)
             return 0;
         int out  = 0;
@@ -81,7 +81,9 @@ abstract public class Brick {
         broken = (strength == 0);
     }
 
-
+    public boolean getBroken(){
+        return broken;
+    }
 
 }
 
