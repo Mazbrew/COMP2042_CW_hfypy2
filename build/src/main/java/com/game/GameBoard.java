@@ -315,6 +315,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             return;
         if(continueButtonRect.contains(p)){
             showPauseMenu = false;
+            gameTimer.start();
             repaint();
         }
         else if(restartButtonRect.contains(p)){
