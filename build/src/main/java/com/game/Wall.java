@@ -50,10 +50,6 @@ public class Wall {
     }
 
     private Brick[] makeSingleTypeLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int type){
-        /*
-          if brickCount is not divisible by line count,brickCount is adjusted to the biggest
-          multiple of lineCount smaller then brickCount
-         */
         brickCnt -= brickCnt % lineCnt;
 
         int brickOnLine = brickCnt / lineCnt;
@@ -90,10 +86,6 @@ public class Wall {
     }
 
     private Brick[] makeChessboardLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int typeA, int typeB){
-        /*
-          if brickCount is not divisible by line count,brickCount is adjusted to the biggest
-          multiple of lineCount smaller then brickCount
-         */
         brickCnt -= brickCnt % lineCnt;
 
         int brickOnLine = brickCnt / lineCnt;
@@ -162,9 +154,6 @@ public class Wall {
             ball.reverseY();
         }
         else if(impactWall()){
-            /*for efficiency reverse is done into method impactWall
-            * because for every brick program checks for horizontal and vertical impacts
-            */
             brickCount--;
         }
         else if((ball.getPosition().getX() < area.getX()) || (ball.getPosition().getX() > area.getX() + area.getWidth())) {
@@ -182,15 +171,12 @@ public class Wall {
     private boolean impactWall(){
         for(Brick b : bricks){
             switch(b.findImpact(ball)) {
-                //Vertical Impact
                 case Brick.UP_IMPACT:
                     ball.reverseY();
                     return b.setImpact(ball.down, Crack.UP);
                 case Brick.DOWN_IMPACT:
                     ball.reverseY();
                     return b.setImpact(ball.up,Crack.DOWN);
-
-                //Horizontal Impact
                 case Brick.LEFT_IMPACT:
                     ball.reverseX();
                     return b.setImpact(ball.right,Crack.RIGHT);
