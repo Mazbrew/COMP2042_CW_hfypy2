@@ -8,11 +8,11 @@ import java.awt.event.MouseEvent;
 
 public class infopage extends JLayeredPane{
     JLabel background = new JLabel();
-    ImageIcon infopage = new ImageIcon("build/src/sprites/infopage.png");
+    ImageIcon infopage = new ImageIcon(getClass().getResource("/infopage.png"));
 
     JLabel backbutton = new JLabel();
-    ImageIcon backbuttonsprite = new ImageIcon("build/src/sprites/BACK.png");
-    ImageIcon backbuttonalt = new ImageIcon("build/src/sprites/BACKalt.png");
+    ImageIcon backbuttonsprite = new ImageIcon(getClass().getResource("/BACK.png"));
+    ImageIcon backbuttonalt = new ImageIcon(getClass().getResource("/BACKalt.png"));
 
     public infopage(GameFrame owner){
         this.setFocusable(true);

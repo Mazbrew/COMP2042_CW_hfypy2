@@ -9,19 +9,19 @@ import java.awt.event.MouseEvent;
 
 public class HomeMenu extends JLayeredPane{
     JLabel background = new JLabel();
-    ImageIcon wall = new ImageIcon("build/src/sprites/brickpattern.png");
+    ImageIcon wall = new ImageIcon(getClass().getResource("/brickpattern.png"));
 
     JLabel playbutton = new JLabel();
-    ImageIcon playbuttonsprite = new ImageIcon("build/src/sprites/PLAY.png");
-    ImageIcon playbuttonalt = new ImageIcon("build/src/sprites/PLAYalt.png");
+    ImageIcon playbuttonsprite = new ImageIcon(getClass().getResource("/PLAY.png"));
+    ImageIcon playbuttonalt = new ImageIcon(getClass().getResource("/PLAYalt.png"));
 
     JLabel infobutton = new JLabel();
-    ImageIcon infobuttonsprite = new ImageIcon("build/src/sprites/INFO.png");
-    ImageIcon infobuttonalt = new ImageIcon("build/src/sprites/INFOalt.png");
+    ImageIcon infobuttonsprite = new ImageIcon(getClass().getResource("/INFO.png"));
+    ImageIcon infobuttonalt = new ImageIcon(getClass().getResource("/INFOalt.png"));
 
     JLabel exitbutton = new JLabel();
-    ImageIcon exitbuttonsprite = new ImageIcon("build/src/sprites/EXIT.png");
-    ImageIcon exitbuttonalt = new ImageIcon("build/src/sprites/EXITalt.png");
+    ImageIcon exitbuttonsprite = new ImageIcon(getClass().getResource("/EXIT.png"));
+    ImageIcon exitbuttonalt = new ImageIcon(getClass().getResource("/EXITalt.png"));
 
 
     public HomeMenu(GameFrame owner){

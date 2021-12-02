@@ -40,7 +40,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.setVisible(true);
         this.addWindowFocusListener(this);
 
-        ImageIcon icon = new ImageIcon("build/src/sprites/brick.png");
+        ImageIcon icon = new ImageIcon(getClass().getResource("/brick.png"));
         this.setIconImage(icon.getImage());
     }
 
