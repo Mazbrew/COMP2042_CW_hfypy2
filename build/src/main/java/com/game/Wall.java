@@ -79,7 +79,7 @@ public class Wall {
         for(double y = brickHgt;i < tmp.length;i++, y += 2*brickHgt){
             double x = (brickOnLine * brickLen) - (brickLen / 2);
             p.setLocation(x,y);
-            tmp[i] = new ClayBrick(p,brickSize);
+            tmp[i] =  makeBrick(p,brickSize,type);
         }
         return tmp;
 
