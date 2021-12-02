@@ -160,7 +160,7 @@ public class Wall {
             */
             brickCount--;
         }
-        else if(impactBorder()) {
+        else if((ball.getPosition().getX() < area.getX()) || (ball.getPosition().getX() > area.getX() + area.getWidth())) {
             ball.reverseX();
         }
         else if(ball.getPosition().getY() < area.getY()){
@@ -193,11 +193,6 @@ public class Wall {
             }
         }
         return false;
-    }
-
-    private boolean impactBorder(){
-        Point2D p = ball.getPosition();
-        return ((p.getX() < area.getX()) ||(p.getX() > (area.getX() + area.getWidth())));
     }
 
     public int getBrickCount(){
