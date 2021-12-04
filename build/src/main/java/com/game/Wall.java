@@ -1,8 +1,6 @@
 package com.game;
 
 import java.awt.*;
-import java.awt.geom.Point2D;
-
 
 public class Wall {
 
