@@ -39,7 +39,7 @@ public class Wall {
         ballCount = 3;
         ballLost = false;
 
-        makeBall(ballPos);
+        ball = new Ball(ballPos);
 
         ball.setSpeed();
 
@@ -125,10 +125,6 @@ public class Wall {
             tmp[i] = makeBrick(p,brickSize,typeA);
         }
         return tmp;
-    }
-
-    private void makeBall(Point2D ballPos){
-        ball = new Ball(ballPos);
     }
 
     private Brick[][] makeLevels(Rectangle drawArea,int brickCount,int lineCount,double brickDimensionRatio){
