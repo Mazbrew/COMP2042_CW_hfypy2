@@ -8,10 +8,6 @@ import java.awt.event.ActionListener;
 
 
 public class DebugPanel extends JPanel {
-
-    private static final Color DEF_BKG = Color.WHITE;
-
-
     private JButton skipLevel;
     private JButton resetBalls;
 
@@ -37,7 +33,6 @@ public class DebugPanel extends JPanel {
     }
 
     private void initialize(){
-        this.setBackground(DEF_BKG);
         this.setLayout(new GridLayout(2,2));
     }
 
