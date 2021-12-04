@@ -221,8 +221,10 @@ public class Wall {
     }
 
     public void nextLevel(){
+        if(level <LEVELS_COUNT){
         bricks = levels[level++];
         this.brickCount = bricks.length;
+        }
     }
 
     public boolean hasLevel(){
@@ -261,5 +263,4 @@ public class Wall {
         }
         return  out;
     }
-
 }
