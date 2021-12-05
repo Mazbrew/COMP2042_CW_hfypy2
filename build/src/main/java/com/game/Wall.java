@@ -27,9 +27,12 @@ public class Wall {
     private int ballCount;
     private boolean ballLost;
 
-    public Wall(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos){
+    private GameBoard gameboard;
+
+    public Wall(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos, GameBoard gameboard){
 
         this.startPoint = new Point(ballPos);
+        this.gameboard = gameboard;
 
         levels = makeLevels(drawArea,brickCount,lineCount,brickDimensionRatio);
         level = 0;
@@ -151,6 +154,7 @@ public class Wall {
             ball.reverseY();
         }
         else if(impactWall()){
+            gameboard.setScore();
             brickCount--;
         }
         else if((ball.getPosition().getX() < area.getX()) || (ball.getPosition().getX() > area.getX() + area.getWidth())) {
