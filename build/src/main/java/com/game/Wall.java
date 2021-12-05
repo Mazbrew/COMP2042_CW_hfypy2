@@ -213,7 +213,6 @@ public class Wall {
         for(Brick b : bricks)
             b.repair();
         brickCount = bricks.length;
-        ballCount = 3;
     }
 
     public boolean ballEnd(){

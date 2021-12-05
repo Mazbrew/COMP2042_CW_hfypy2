@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.font.FontRenderContext;
-import java.io.IOException;
 
 
 public class GameBoard extends JComponent implements KeyListener,MouseListener,MouseMotionListener {
@@ -49,13 +48,15 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private int score;
 
 
-    public GameBoard(JFrame owner) throws IOException {
+    public GameBoard(JFrame owner){
         super();
 
         strLen = 0;
         showPauseMenu = false;
 
         Highscore highscore = new Highscore();
+        highscore.readScores();
+
 
         this.owner= owner;
 
@@ -77,6 +78,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             if(wall.isBallLost()){
                 if(wall.ballEnd()){
                     wall.wallReset();
+                    highscore.updateScores(score);
                     message = "Game over";
                 }
                 wall.ballReset();
@@ -86,6 +88,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 if(wall.hasLevel()){
                     message = "Go to Next Level";
                     gameTimer.stop();
+                    wall.ballReset();
                     wall.wallReset();
                     wall.nextLevel();
                 }

@@ -5,7 +5,6 @@ import javax.swing.event.MouseInputListener;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.io.IOException;
 
 
 public class HomeMenu extends JLayeredPane{
@@ -43,11 +42,7 @@ public class HomeMenu extends JLayeredPane{
                     Point p = mouseEvent.getPoint();
 
                     if(playbutton.contains(p)){
-                        try {
-                            owner.enableGameBoard();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }  
+                        owner.enableGameBoard();
                     }                  
                 }
 
@@ -66,11 +61,7 @@ public class HomeMenu extends JLayeredPane{
 
                     playbutton.setIcon(playbuttonsprite);
                     if(playbutton.contains(p)){
-                        try {
                             owner.enableGameBoard();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }  
                     } 
                 }
 
