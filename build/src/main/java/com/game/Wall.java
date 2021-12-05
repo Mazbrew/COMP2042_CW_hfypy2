@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 public class Wall {
 
-    private static final int LEVELS_COUNT = 7;
+    private static final int LEVELS_COUNT = 8;
 
     private static final int CLAY = 1;
     private static final int STEEL = 2;
@@ -144,6 +144,7 @@ public class Wall {
         tmp[4] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
         tmp[5] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SLIME);
         tmp[6] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,GRAVITY);
+        tmp[7] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SLIME,GRAVITY);
         return tmp;
     }
 
