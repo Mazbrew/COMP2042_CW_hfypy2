@@ -264,6 +264,14 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 D_check = true;
                 wall.player.moveRight();
                 break;
+            case KeyEvent.VK_LEFT:
+                A_check = true;
+                wall.player.moveLeft();
+                break;
+            case KeyEvent.VK_RIGHT:
+                D_check = true;
+                wall.player.moveRight();
+                break;
             case KeyEvent.VK_ESCAPE:
                 if(showPauseMenu == false){
                     showPauseMenu = !showPauseMenu;
@@ -296,6 +304,12 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 A_check = false;
                 break;
             case KeyEvent.VK_D:
+                D_check = false;
+                break;
+            case KeyEvent.VK_LEFT:
+                A_check = false;
+                break;
+            case KeyEvent.VK_RIGHT:
                 D_check = false;
                 break;
             default:
