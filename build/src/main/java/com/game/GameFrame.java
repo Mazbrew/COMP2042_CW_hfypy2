@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
+import java.io.IOException;
 
 
 public class GameFrame extends JFrame implements WindowFocusListener {
@@ -40,7 +41,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.setIconImage(icon.getImage());
     }
 
-    public void enableGameBoard(){
+    public void enableGameBoard() throws IOException{
         gameBoard = new GameBoard(this);
         this.dispose();
         this.remove(homeMenu);

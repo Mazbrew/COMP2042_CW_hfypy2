@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="MY"/>
     <property name="sun.boot.library.path" value="C:\Program Files\AdoptOpenJDK\jdk-11.0.11.9-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\USER\AppData\Local\Temp\surefire14201817114692371208\surefirebooter11042935384163735274.jar C:\Users\USER\AppData\Local\Temp\surefire14201817114692371208 2021-12-03T01-10-24_454-jvmRun1 surefire15005335160189883327tmp surefire_09879508929833546187tmp"/>
+    <property name="sun.java.command" value="C:\Users\USER\AppData\Local\Temp\surefire13452361236526837034\surefirebooter13795281703380993921.jar C:\Users\USER\AppData\Local\Temp\surefire13452361236526837034 2021-12-05T16-54-06_603-jvmRun1 surefire10819371118740379101tmp surefire_0673934668638194206tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\test-classes;c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\classes;C:\Users\USER\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\USER\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\USER\AppData\Local\Temp\surefire14201817114692371208\surefirebooter11042935384163735274.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\USER\AppData\Local\Temp\surefire13452361236526837034\surefirebooter13795281703380993921.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.11+9"/>

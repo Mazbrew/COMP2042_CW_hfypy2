@@ -14,6 +14,7 @@ com\game\Brick.class
 com\game\CementBrick.class
 com\game\Crack.class
 com\game\Wall.class
+com\game\Highscore.class
 com\game\SteelBrick.class
 com\game\GraphicsMain.class
 com\game\HomeMenu$2.class

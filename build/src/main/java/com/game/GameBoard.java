@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.font.FontRenderContext;
-
+import java.io.IOException;
 
 
 public class GameBoard extends JComponent implements KeyListener,MouseListener,MouseMotionListener {
@@ -49,14 +49,15 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private int score;
 
 
-    public GameBoard(JFrame owner){
+    public GameBoard(JFrame owner) throws IOException {
         super();
 
         strLen = 0;
         showPauseMenu = false;
 
-        this.owner= owner;
+        Highscore highscore = new Highscore();
 
+        this.owner= owner;
 
         menuFont = new Font("Monospaced",Font.PLAIN,TEXT_SIZE);
         
