@@ -3,6 +3,7 @@ package com.game;
 import java.awt.*;
 import java.awt.Point;
 import java.awt.geom.Point2D;
+import javax.swing.JFrame;
 
 abstract public class Brick {
     public static final int UP_IMPACT = 100;    
@@ -52,7 +53,7 @@ abstract public class Brick {
     }
 
 
-    public int findBrickImpact(Ball b){
+    public int findBrickImpact(Ball b, JFrame owner){
         if(broken)
             return 0;
         int out  = 0;

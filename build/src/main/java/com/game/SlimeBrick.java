@@ -1,6 +1,7 @@
 package com.game;
 import java.awt.*;
 import java.awt.Point;
+import javax.swing.JFrame;
 
 public class SlimeBrick extends Brick{
 
@@ -15,7 +16,7 @@ public class SlimeBrick extends Brick{
     }
 
     @Override
-    public int findBrickImpact(Ball b){
+    public int findBrickImpact(Ball b,JFrame owner){
         if(super.getBroken())
             return 0;
         int out  = 0;

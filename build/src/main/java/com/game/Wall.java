@@ -2,14 +2,17 @@ package com.game;
 
 import java.awt.*;
 
+import javax.swing.JFrame;
+
 public class Wall {
 
-    private static final int LEVELS_COUNT = 6;
+    private static final int LEVELS_COUNT = 7;
 
     private static final int CLAY = 1;
     private static final int STEEL = 2;
     private static final int CEMENT = 3;
     private static final int SLIME = 4;
+    private static final int GRAVITY = 5;
 
     private static int bpcheck;
 
@@ -29,7 +32,11 @@ public class Wall {
 
     private GameBoard gameboard;
 
-    public Wall(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos, GameBoard gameboard){
+    private JFrame owner;
+
+    public Wall(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos, GameBoard gameboard,JFrame owner){
+
+        this.owner = owner;
 
         this.startPoint = new Point(ballPos);
         this.gameboard = gameboard;
@@ -136,6 +143,7 @@ public class Wall {
         tmp[3] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,STEEL);
         tmp[4] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
         tmp[5] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SLIME);
+        tmp[6] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,GRAVITY);
         return tmp;
     }
 
@@ -171,7 +179,7 @@ public class Wall {
 
     private boolean impactWall(){
         for(Brick b : bricks){
-            switch(b.findBrickImpact(ball)) {
+            switch(b.findBrickImpact(ball,owner)) {
                 case Brick.UP_IMPACT:
                     ball.reverseY();
                     return b.setImpact(ball.down, Crack.UP);
@@ -260,6 +268,9 @@ public class Wall {
                 break;
             case SLIME:
                 out = new SlimeBrick(point,size);
+                break;
+            case GRAVITY:
+                out = new GravityBrick(point,size);
                 break;
             default:
                 throw  new IllegalArgumentException(String.format("Unknown Type:%d\n",type));
