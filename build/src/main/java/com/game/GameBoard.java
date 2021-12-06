@@ -311,12 +311,12 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 break;
             case KeyEvent.VK_SPACE:
                 if(!showPauseMenu)
-                    if(!gameTimer.isRunning())
+                    if(!gameTimer.isRunning() && wall.hasLevel())
                         gameTimer.start();
                 break;
             case KeyEvent.VK_F1:
-                if(keyEvent.isAltDown() && keyEvent.isShiftDown())
-                    debugConsole.setVisible(true);
+                debugConsole.setVisible(true);
+                break;
             default:
                
         }
@@ -418,7 +418,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     public void onLostFocus(){
         gameTimer.stop();
-        message = "Focus Lost";
+        message = "Focus Lost, press [SPACE] to continue";
         repaint();
     }
 
