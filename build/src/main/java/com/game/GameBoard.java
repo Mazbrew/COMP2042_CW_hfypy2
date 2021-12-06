@@ -87,7 +87,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             }
             else if(wall.isDone()){
                 if(wall.hasLevel()){
-                    message = "Go to Next Level";
+                    message = "Next Level, press [SPACE] to continue";
                     gameTimer.stop();
                     wall.ballReset();
                     wall.nextLevel();
@@ -118,7 +118,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
 
     public void paint(Graphics g){
-
         Graphics2D g2d = (Graphics2D) g;
         fm = g2d.getFontMetrics();
 
