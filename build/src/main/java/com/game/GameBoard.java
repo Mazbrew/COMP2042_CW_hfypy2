@@ -45,7 +45,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private static boolean A_check;
     private static boolean D_check;
 
-    private int score;
+    private static int score;
+    private static int resetScore;
 
 
     public GameBoard(JFrame owner){
@@ -258,6 +259,14 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         g2d.setFont(tmpFont);
         g2d.setColor(tmpColor);
+    }
+
+    public void setResetscrore(){
+        resetScore = score;
+    }
+
+    public void resetScore(){
+        score = resetScore;
     }
 
     public void setScore(){

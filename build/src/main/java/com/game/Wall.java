@@ -219,6 +219,7 @@ public class Wall {
     }
 
     public void wallReset(){
+        gameboard.resetScore();
         for(Brick b : bricks)
             b.repair();
         brickCount = bricks.length;
@@ -233,6 +234,7 @@ public class Wall {
     }
 
     public void nextLevel(){
+        gameboard.setResetscrore();
         if(level <LEVELS_COUNT){
         bricks = levels[level++];
         this.brickCount = bricks.length;
