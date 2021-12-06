@@ -37,7 +37,7 @@ public class Highscore{
         }  
     }
 
-    public void readScores(){
+    public int[] readScores(){
         try {
             File highscores = new File("highscore.txt");
             Scanner fscanf = new Scanner(highscores);
@@ -48,11 +48,14 @@ public class Highscore{
             }
             fscanf.close();
             
+            
         } 
         catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+
+        return scores;
     }
 
     

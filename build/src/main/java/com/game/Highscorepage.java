@@ -14,6 +14,11 @@ public class Highscorepage extends JLayeredPane{
     ImageIcon backbuttonsprite = new ImageIcon(getClass().getResource("/BACK.png"));
     ImageIcon backbuttonalt = new ImageIcon(getClass().getResource("/BACKalt.png"));
 
+    JTextArea highscorelist = new JTextArea();
+
+    private int[] scores;
+    private String scoredisplay ="";
+
     public Highscorepage(GameFrame owner,Highscore highscore){
         this.setFocusable(true);
         this.requestFocusInWindow();
@@ -83,10 +88,28 @@ public class Highscorepage extends JLayeredPane{
             }
     });
 
+        highscorelist.setSize(100,100);
+        highscorelist.setLocation(owner.getWidth()/2-highscorelist.getWidth()/2,owner.getHeight()/3-highscorelist.getHeight()/2);
+        highscorelist.setEditable(false);
+
+        Font font = new Font("Verdana", Font.BOLD, 15);
+        highscorelist.setFont(font);  
+
+        scores = highscore.readScores();
+
+        for(int i = 0; i < scores.length; i++){
+            scoredisplay += scores[i] + "\n";
+        }
+
+        highscorelist.setText(scoredisplay);
+
+        
+
         this.add(backbutton, JLayeredPane.MODAL_LAYER);
+        this.add(highscorelist, JLayeredPane.MODAL_LAYER);
         this.add(background, JLayeredPane.DEFAULT_LAYER);
+        
         this.validate();
 
-        highscore.readScores();
     }
 }
