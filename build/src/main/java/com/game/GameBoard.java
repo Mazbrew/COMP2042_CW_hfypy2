@@ -90,8 +90,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                     message = "Go to Next Level";
                     gameTimer.stop();
                     wall.ballReset();
-                    wall.wallReset();
                     wall.nextLevel();
+                    wall.wallReset();
+                    
                 }
                 else{
                     message = "ALL WALLS DESTROYED";
@@ -364,7 +365,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             repaint();
         }
         else if(restartButtonRect.contains(p)){
-            message = "Restarting Game...";
+            message = "Restarting Level, Press [SPACE] to continue";
             wall.ballReset();
             wall.wallReset();
             showPauseMenu = false;
