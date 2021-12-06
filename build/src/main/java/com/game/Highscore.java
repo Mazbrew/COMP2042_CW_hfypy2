@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Highscore{
-    private int scores[];
+    private static int scores[];
     private int totalScores = 5;
     
     public Highscore(){

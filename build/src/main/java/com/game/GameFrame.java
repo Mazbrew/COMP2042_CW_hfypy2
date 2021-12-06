@@ -13,11 +13,14 @@ public class GameFrame extends JFrame implements WindowFocusListener {
     private static GameBoard gameBoard;
     private static HomeMenu homeMenu;
     private static infopage infopage;
+    private static Highscorepage highscorepage;
+    private static Highscore highscore;
 
     private boolean gaming;
 
     public GameFrame(){
         super();
+        highscore = new Highscore();
 
         gaming = false;
 
@@ -41,7 +44,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
     }
 
     public void enableGameBoard(){
-        gameBoard = new GameBoard(this);
+        gameBoard = new GameBoard(this,highscore);
         this.add(gameBoard,BorderLayout.CENTER);
         this.remove(homeMenu);
         
@@ -56,12 +59,28 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.initialize();
     }
 
-    public void enableHomeMenu(){
+    public void revertInfopage(){
         this.add(homeMenu,BorderLayout.CENTER);
         this.remove(infopage);
         
         this.initialize();
     }
+
+    public void enableHighscore(){
+        highscorepage = new Highscorepage(this,highscore);
+        this.add(highscorepage,BorderLayout.CENTER);
+        this.remove(homeMenu);
+        
+        this.initialize();
+    }
+
+    public void revertHighscorepage(){
+        this.add(homeMenu,BorderLayout.CENTER);
+        this.remove(highscorepage);
+        
+        this.initialize();
+    }
+
 
     public void autoLocate(){
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();

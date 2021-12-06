@@ -1,6 +1,9 @@
+com\game\HomeMenu$4.class
+com\game\Highscorepage.class
 com\game\infopage$1.class
 com\game\Player.class
 com\game\DebugPanel.class
+com\game\GravityBrick.class
 com\game\infopage.class
 com\game\GameFrame.class
 com\game\HomeMenu.class
@@ -14,6 +17,7 @@ com\game\Brick.class
 com\game\CementBrick.class
 com\game\Crack.class
 com\game\Wall.class
+com\game\Highscorepage$1.class
 com\game\Highscore.class
 com\game\SteelBrick.class
 com\game\GraphicsMain.class

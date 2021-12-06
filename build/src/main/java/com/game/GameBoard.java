@@ -49,13 +49,12 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private static int resetScore;
 
 
-    public GameBoard(JFrame owner){
+    public GameBoard(JFrame owner,Highscore highscore){
         super();
 
         strLen = 0;
         showPauseMenu = false;
 
-        Highscore highscore = new Highscore();
         highscore.readScores();
 
 
@@ -95,6 +94,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                     
                 }
                 else{
+                    highscore.updateScores(score);
                     message = "ALL WALLS DESTROYED";
                     gameTimer.stop();
                 }

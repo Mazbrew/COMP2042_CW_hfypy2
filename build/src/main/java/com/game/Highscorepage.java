@@ -6,22 +6,22 @@ import javax.swing.event.MouseInputListener;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 
-public class infopage extends JLayeredPane{
+public class Highscorepage extends JLayeredPane{
     JLabel background = new JLabel();
-    ImageIcon infopage = new ImageIcon(getClass().getResource("/infopage.png"));
+    ImageIcon highscorepage = new ImageIcon(getClass().getResource("/highscorepage.png"));
 
     JLabel backbutton = new JLabel();
     ImageIcon backbuttonsprite = new ImageIcon(getClass().getResource("/BACK.png"));
     ImageIcon backbuttonalt = new ImageIcon(getClass().getResource("/BACKalt.png"));
 
-    public infopage(GameFrame owner){
+    public Highscorepage(GameFrame owner,Highscore highscore){
         this.setFocusable(true);
         this.requestFocusInWindow();
         this.setLayout(null);
         this.setSize(600,450);
 
         background.setBounds(0,0,600,450);
-        background.setIcon(infopage);
+        background.setIcon(highscorepage);
 
         backbutton.setBounds(this.getWidth()/2-backbuttonsprite.getIconWidth()/2,(this.getHeight()/3)*2-backbuttonsprite.getIconHeight()/2,200,60);
         backbutton.setIcon(backbuttonsprite);
@@ -31,7 +31,7 @@ public class infopage extends JLayeredPane{
                 Point p = mouseEvent.getPoint();
 
                 if(backbutton.contains(p)){
-                    owner.revertInfopage();
+                    owner.revertHighscorepage();
                 }                  
             }
 
@@ -50,7 +50,7 @@ public class infopage extends JLayeredPane{
 
                 backbutton.setIcon(backbuttonsprite);
                 if(backbutton.contains(p)){
-                    owner.revertInfopage();
+                    owner.revertHighscorepage();
                 } 
             }
 
@@ -86,5 +86,7 @@ public class infopage extends JLayeredPane{
         this.add(backbutton, JLayeredPane.MODAL_LAYER);
         this.add(background, JLayeredPane.DEFAULT_LAYER);
         this.validate();
+
+        highscore.readScores();
     }
 }
