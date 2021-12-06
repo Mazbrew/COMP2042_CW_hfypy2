@@ -1,6 +1,5 @@
 package com.game;
 
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -44,7 +43,6 @@ public class Highscore{
 
             for(int i=0; i<totalScores; i++) {
               scores[i] = fscanf.nextInt();
-              System.out.println(scores[i]);
             }
             fscanf.close();
             
@@ -57,8 +55,6 @@ public class Highscore{
 
         return scores;
     }
-
-    
 
     public int updateScores(int curscore){
         sortScores(curscore);
