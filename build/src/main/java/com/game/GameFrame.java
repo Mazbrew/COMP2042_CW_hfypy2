@@ -66,6 +66,14 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.initialize();
     }
 
+    public void revertGameboard(){
+        this.add(homeMenu,BorderLayout.CENTER);
+        this.remove(gameBoard);
+        
+        this.initialize();
+
+    }
+
     public void enableHighscore(){
         highscorepage = new Highscorepage(this,highscore);
         this.add(highscorepage,BorderLayout.CENTER);
