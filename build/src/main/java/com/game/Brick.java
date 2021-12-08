@@ -11,7 +11,7 @@ abstract public class Brick {
     public static final int LEFT_IMPACT = 300;
     public static final int RIGHT_IMPACT = 400;
 
-    Shape brickFace;
+    public Shape brickFace;
 
     private Color border;
     private Color inner;

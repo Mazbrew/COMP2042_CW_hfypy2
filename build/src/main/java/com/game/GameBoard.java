@@ -250,7 +250,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         obscureGameBoard(g2d);
 
         g2d.setFont(menuFont);
-        g2d.setColor(MENU_COLOR);
+        g2d.setColor(MENU_COLOR);  
         FontRenderContext frc = g2d.getFontRenderContext();
 
         if(mainmenuButtonRect == null){

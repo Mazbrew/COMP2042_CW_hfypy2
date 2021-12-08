@@ -8,24 +8,24 @@ import java.awt.event.MouseEvent;
 
 
 public class HomeMenu extends JLayeredPane{
-    JLabel background = new JLabel();
-    ImageIcon wall = new ImageIcon(getClass().getResource("/brickpattern.png"));
+    private JLabel background = new JLabel();
+    private ImageIcon wall = new ImageIcon(getClass().getResource("/brickpattern.png"));
 
-    JLabel playbutton = new JLabel();
-    ImageIcon playbuttonsprite = new ImageIcon(getClass().getResource("/PLAY.png"));
-    ImageIcon playbuttonalt = new ImageIcon(getClass().getResource("/PLAYalt.png"));
+    private JLabel playbutton = new JLabel();
+    private ImageIcon playbuttonsprite = new ImageIcon(getClass().getResource("/PLAY.png"));
+    private ImageIcon playbuttonalt = new ImageIcon(getClass().getResource("/PLAYalt.png"));
 
-    JLabel infobutton = new JLabel();
-    ImageIcon infobuttonsprite = new ImageIcon(getClass().getResource("/INFO.png"));
-    ImageIcon infobuttonalt = new ImageIcon(getClass().getResource("/INFOalt.png"));
+    private JLabel infobutton = new JLabel();
+    private ImageIcon infobuttonsprite = new ImageIcon(getClass().getResource("/INFO.png"));
+    private ImageIcon infobuttonalt = new ImageIcon(getClass().getResource("/INFOalt.png"));
 
-    JLabel exitbutton = new JLabel();
-    ImageIcon exitbuttonsprite = new ImageIcon(getClass().getResource("/EXIT.png"));
-    ImageIcon exitbuttonalt = new ImageIcon(getClass().getResource("/EXITalt.png"));
+    private JLabel exitbutton = new JLabel();
+    private ImageIcon exitbuttonsprite = new ImageIcon(getClass().getResource("/EXIT.png"));
+    private ImageIcon exitbuttonalt = new ImageIcon(getClass().getResource("/EXITalt.png"));
 
-    JLabel scoresbutton = new JLabel();
-    ImageIcon scoresbuttonsprite = new ImageIcon(getClass().getResource("/HIGHSCORES.png"));
-    ImageIcon scoresbuttonalt = new ImageIcon(getClass().getResource("/HIGHSCORESalt.png"));
+    private JLabel scoresbutton = new JLabel();
+    private ImageIcon scoresbuttonsprite = new ImageIcon(getClass().getResource("/HIGHSCORES.png"));
+    private ImageIcon scoresbuttonalt = new ImageIcon(getClass().getResource("/HIGHSCORESalt.png"));
 
 
     public HomeMenu(GameFrame owner){
