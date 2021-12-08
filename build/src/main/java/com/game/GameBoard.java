@@ -81,9 +81,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             message = String.format("Bricks: %d     Balls: %d     Score: %d",wall.getBrickCount(),wall.getBallCount(),score);
             if(wall.isBallLost()){
                 if(wall.ballEnd()){
-                    wall.wallReset();
                     highscore.updateScores(score);
+                    showEndScreen= true;
                     message = "Game over";
+                    wall.ballReset();
                 }
                 wall.ballReset();
                 gameTimer.stop();
@@ -204,34 +205,20 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private void drawEndScreen(Graphics2D g2d){
         obscureGameBoard(g2d);
 
-        Composite tmp = g2d.getComposite();
-        Color tmpColor = g2d.getColor();
-
         g2d.setFont(menuFont);
         g2d.setColor(MENU_COLOR);
-
-        int x = this.getWidth() / 8;
-        int y = this.getHeight() / 4;
-
-        if(strLen == 0){
-            FontRenderContext frc = g2d.getFontRenderContext();
-            strLen = menuFont.getStringBounds(PAUSE,frc).getBounds().width;
-        }
 
         if(mainmenuButtonRect == null){
             FontRenderContext frc = g2d.getFontRenderContext();
             mainmenuButtonRect = menuFont.getStringBounds(MAINMENU,frc).getBounds();
-            mainmenuButtonRect.setLocation(x,y-mainmenuButtonRect.height);
+            mainmenuButtonRect.setLocation((int)(owner.getWidth()/2-mainmenuButtonRect.getWidth()/2),(int) (owner.getHeight()/2-mainmenuButtonRect.getHeight()));
         }
 
-        g2d.drawString(MAINMENU,x,y);
-        g2d.setComposite(tmp);
-        g2d.setColor(tmpColor);
+        g2d.drawString(MAINMENU,(int)(owner.getWidth()/2-mainmenuButtonRect.getWidth()/2),(int) (owner.getHeight()/2));
 
     }
 
     private void obscureGameBoard(Graphics2D g2d){
-
         Composite tmp = g2d.getComposite();
         Color tmpColor = g2d.getColor();
 
@@ -246,10 +233,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     }
 
     private void drawPauseMenu(Graphics2D g2d){
-        Font tmpFont = g2d.getFont();
-        Color tmpColor = g2d.getColor();
-
-
         g2d.setFont(menuFont);
         g2d.setColor(MENU_COLOR);
 
@@ -292,11 +275,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         }
 
         g2d.drawString(EXIT,x,y);
-
-
-
-        g2d.setFont(tmpFont);
-        g2d.setColor(tmpColor);
     }
 
     public void setResetscrore(){
