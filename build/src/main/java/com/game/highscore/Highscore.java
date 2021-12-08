@@ -6,10 +6,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Class that handles the logic for the highscores.
+ * 
+ */
 public class Highscore{
     private static int scores[];
     private int totalScores = 5;
     
+    /**
+     * Contructor that generates the highscores.txt file if it isn't found within the directory. 
+     * Else the game will just run like normal.
+     */
     public Highscore(){
         scores = new int[totalScores];
 
@@ -36,6 +44,12 @@ public class Highscore{
         }  
     }
 
+    
+    /** 
+     * Method that reads the highscore.txt file for the highscores.
+     * 
+     * @return Returns an array of integers for the highscores where the index of 0 is the highest and it descends from there.
+     */
     public int[] readScores(){
         try {
             File highscores = new File("highscore.txt");
@@ -56,7 +70,13 @@ public class Highscore{
         return scores;
     }
 
-    public int updateScores(int curscore){
+    
+    /** 
+     * Method that updates the array of highscores
+     * 
+     * @param curscore The users's current highscore.
+     */
+    public void updateScores(int curscore){
         sortScores(curscore);
         try {
             File highscores = new File("highscore.txt");
@@ -72,9 +92,14 @@ public class Highscore{
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-        return totalScores;
     }
 
+    
+    /** 
+     * Method that sorts the elemments of the highscore array.
+     * 
+     * @param curscore - The user's current score.
+     */
     public void sortScores(int curscore){
         int temp;
 
