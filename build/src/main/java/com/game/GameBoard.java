@@ -395,26 +395,29 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
-        if(continueButtonRect.contains(p)){
-            showPauseMenu = false;
-            gameTimer.start();
-            repaint();
+        if(showPauseMenu){
+            if(continueButtonRect.contains(p)){
+                showPauseMenu = false;
+                gameTimer.start();
+                repaint();
+            }
+            else if(restartButtonRect.contains(p)){
+                message = "Restarting Level, Press [SPACE] to continue";
+                wall.ballReset();
+                wall.wallReset();
+                showPauseMenu = false;
+                repaint();
+            }
+            else if(exitButtonRect.contains(p)){
+                System.exit(0);
+                score=0;
+            }
         }
-        else if(restartButtonRect.contains(p)){
-            message = "Restarting Level, Press [SPACE] to continue";
-            wall.ballReset();
-            wall.wallReset();
-            showPauseMenu = false;
-            repaint();
-        }
-        else if(exitButtonRect.contains(p)){
-            System.exit(0);
-            score=0;
-        }
-        
-        if(mainmenuButtonRect.contains(p)){
-            gameTimer.stop();
-            owner.revertGameboard();
+        else if(showEndScreen){ 
+            if(mainmenuButtonRect.contains(p)){
+                gameTimer.stop();
+                owner.revertGameboard();
+            }
         }
     }
 
