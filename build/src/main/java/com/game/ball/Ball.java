@@ -6,6 +6,11 @@ import java.awt.geom.RectangularShape;
 import java.awt.geom.Ellipse2D;
 import java.util.Random;
 
+
+/**
+ * The ball class contains all of the logic and the properties of the ball.
+ * 
+ */
 public class Ball {
 
     private Shape ballFace;
@@ -49,6 +54,14 @@ public class Ball {
         speedY = 0;
     }
 
+    
+    /** 
+     * Method that generates a circle at a specified point and with a specified radius.
+     * 
+     * @param center - Position of the circle.
+     * @param DEF_RADIUS - Radius of the circle.
+     * @return Returns the circle generated with the parameters specified.
+     */
     protected Shape makeBall(Point2D center,int DEF_RADIUS){
 
         double x = center.getX() - (DEF_RADIUS / 2);
@@ -57,6 +70,9 @@ public class Ball {
         return new Ellipse2D.Double(x,y,DEF_RADIUS,DEF_RADIUS);
     }
 
+    /**
+     * Method that updates the position of the ball according to the X and Y speeds.
+     */
     public void move(){
         RectangularShape tmp = (RectangularShape) ballFace;
         center.setLocation((center.getX() + speedX),(center.getY() + speedY));
@@ -70,6 +86,9 @@ public class Ball {
         ballFace = tmp;
     }
 
+    /**
+     * Method that sets the movement speed of the ball.
+     */
     public void setSpeed(){
         chance= rnd.nextBoolean();
 
@@ -81,6 +100,9 @@ public class Ball {
         speedY = -(rnd.nextInt(5 + 1 - 2) + 2);
     }
 
+    /**
+     * Method that sets a random X axis speed for the ball.
+     */
     public void setRandomX(){
         chance = rnd.nextBoolean();
         speedX = rnd.nextInt(5 + 1 - 2) + 2;
@@ -89,6 +111,9 @@ public class Ball {
         }
     }
 
+    /**
+     * Method that sets a random Y axis speed for the ball.
+     */
     public void setRandomY(){
         chance = rnd.nextBoolean();
         speedY = rnd.nextInt(5 + 1 - 2) + 2;
@@ -97,38 +122,88 @@ public class Ball {
         }
     }
 
+    
+    /** 
+     * This setter method is used to by the debug panel to directly change the X axis speed of the ball.
+     * 
+     * @param Specific X axis speed of the ball.
+     */
     public void setXSpeed(int s){
         speedX = s;
     }
 
+    
+    /** 
+     * This setter method is used to by the debug panel to directly change the X axis speed of the ball.
+     * 
+     * @param Specific Y axis speed of the ball.
+     */
     public void setYSpeed(int s){
         speedY = s;
     }
 
+    /**
+     * Method that reverses the X axis speed of the ball. 
+     * In other words, alternates between the left and right movement of the ball when called. 
+     */
     public void reverseX(){
         speedX *= -1;
     }
 
+    /**
+     * Method that reverses the Y axis speed of the ball. 
+     * In other words, alternates between the up and down movement of the ball when called. 
+     */
     public void reverseY(){
         speedY *= -1;
     }
 
+    
+    /** 
+     * Getter method to get the border color of the ball.
+     * 
+     * @return Returns the border color of the ball.
+     */
     public Color getBorderColor(){
         return DEF_BORDER_COLOR;
     }
 
+    
+    /** 
+     * Getter method to get the inner color of the ball.
+     * 
+     * @return Returns the inner color of the ball.
+     */
     public Color getInnerColor(){
         return DEF_INNER_COLOR;
     }
 
+    
+    /** 
+     * Getter method to get the current position of the ball.
+     * 
+     * @return Returns the current position of the ball.
+     */
     public Point2D getPosition(){
         return center;
     }
 
+    
+    /** 
+     * Getter method to get the shape of the ball.
+     * 
+     * @return Returns the shape of the ball, circle.
+     */
     public Shape getBallFace(){
         return ballFace;
     }
 
+    
+    /** 
+     * Method that moves the ball to the X and Y position parsed in by the parameter, p.
+     * 
+     * @param p - The desired X and Y position of the ball.
+     */
     public void moveTo(Point p){
         center.setLocation(p);
 
@@ -140,6 +215,13 @@ public class Ball {
         ballFace = tmp;
     }
 
+    
+    /** 
+     * Method that sets the position of the collision areas of the ball.
+     * 
+     * @param width - Width of the ball.
+     * @param height - Height of the ball.
+     */
     private void setPoints(double width,double height){
         up.setLocation(center.getX(),center.getY()-(height / 2));
         down.setLocation(center.getX(),center.getY()+(height / 2));
@@ -148,10 +230,22 @@ public class Ball {
         right.setLocation(center.getX()+(width / 2),center.getY());
     }
 
+    
+    /** 
+     * Getter method to return the X axis speed of the wall
+     * 
+     * @return The X axis speed of the ball.
+     */
     public int getSpeedX(){
         return speedX;
     }
 
+    
+    /** 
+     * Getter method to return the Y axis speed of the wall
+     * 
+     * @return The Y axis speed of the ball.
+     */
     public int getSpeedY(){
         return speedY;
     }
