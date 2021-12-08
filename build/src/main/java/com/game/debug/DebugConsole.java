@@ -10,6 +10,9 @@ import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
+/**
+ *  The DebugConsole class defines the properties of the DebugConsole JDialog.
+ */
 public class DebugConsole extends JDialog implements WindowListener{
 
     private static final String TITLE = "Debug Console";
@@ -35,6 +38,9 @@ public class DebugConsole extends JDialog implements WindowListener{
         this.pack();
     }
 
+    /**
+     * Method that initializes the properties of the debug console.
+     */
     private void initialize(){
         this.setModal(true);
         this.setTitle(TITLE);
@@ -44,7 +50,9 @@ public class DebugConsole extends JDialog implements WindowListener{
         this.setFocusable(true);
     }
 
-
+    /**
+     * Method that sets the location of the debug console to the center of the frame.
+     */
     private void setLocation(){
         int x = ((owner.getWidth() - this.getWidth()) / 2) + owner.getX();
         int y = ((owner.getHeight() - this.getHeight()) / 2) + owner.getY();
@@ -52,31 +60,62 @@ public class DebugConsole extends JDialog implements WindowListener{
     }
 
 
+    
+    /** 
+     * Unsused interface.
+     */
     @Override
     public void windowOpened(WindowEvent windowEvent) {
 
     }
 
+    
+    /** 
+     * Repaints the gameboard upon the closing of the DebugConsole Jdialog.
+     * 
+     * @param windowEvent The parameter that defines what has occured to the JDialog window.
+     */
     @Override
     public void windowClosing(WindowEvent windowEvent) {
         gameBoard.repaint();
     }
 
+    
+    /** 
+     * Unused interface
+     * 
+     */
     @Override
     public void windowClosed(WindowEvent windowEvent) {
 
     }
 
+    
+    /** 
+     * Unused interface
+     * 
+     */
     @Override
     public void windowIconified(WindowEvent windowEvent) {
 
     }
 
+    
+    /** 
+     * Unused interface
+     * 
+     */
     @Override
     public void windowDeiconified(WindowEvent windowEvent) {
 
     }
 
+    
+    /** 
+     * Interface that changes the X and Y axis speed of the ball upon closure.
+     * 
+     * @param windowEvent The parameter that defines what has occured to the JDialog window.
+     */
     @Override
     public void windowActivated(WindowEvent windowEvent) {
         setLocation();
@@ -84,6 +123,11 @@ public class DebugConsole extends JDialog implements WindowListener{
         debugPanel.setValues(b.getSpeedX(),b.getSpeedY());
     }
 
+    
+    /** 
+     * Unused interface
+     * 
+     */
     @Override
     public void windowDeactivated(WindowEvent windowEvent) {
 

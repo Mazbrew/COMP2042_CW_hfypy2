@@ -58,8 +58,8 @@ public class Ball {
     /** 
      * Method that generates a circle at a specified point and with a specified radius.
      * 
-     * @param center - Position of the circle.
-     * @param DEF_RADIUS - Radius of the circle.
+     * @param center Position of the circle.
+     * @param DEF_RADIUS Radius of the circle.
      * @return Returns the circle generated with the parameters specified.
      */
     protected Shape makeBall(Point2D center,int DEF_RADIUS){
@@ -126,7 +126,7 @@ public class Ball {
     /** 
      * This setter method is used to by the debug panel to directly change the X axis speed of the ball.
      * 
-     * @param Specific X axis speed of the ball.
+     * @param s Specific X axis speed of the ball.
      */
     public void setXSpeed(int s){
         speedX = s;
@@ -136,7 +136,7 @@ public class Ball {
     /** 
      * This setter method is used to by the debug panel to directly change the X axis speed of the ball.
      * 
-     * @param Specific Y axis speed of the ball.
+     * @param s Specific Y axis speed of the ball.
      */
     public void setYSpeed(int s){
         speedY = s;
@@ -202,7 +202,7 @@ public class Ball {
     /** 
      * Method that moves the ball to the X and Y position parsed in by the parameter, p.
      * 
-     * @param p - The desired X and Y position of the ball.
+     * @param p The desired X and Y position of the ball.
      */
     public void moveTo(Point p){
         center.setLocation(p);
@@ -219,8 +219,8 @@ public class Ball {
     /** 
      * Method that sets the position of the collision areas of the ball.
      * 
-     * @param width - Width of the ball.
-     * @param height - Height of the ball.
+     * @param width Width of the ball.
+     * @param height Height of the ball.
      */
     private void setPoints(double width,double height){
         up.setLocation(center.getX(),center.getY()-(height / 2));
