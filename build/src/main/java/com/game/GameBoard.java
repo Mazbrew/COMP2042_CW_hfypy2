@@ -28,10 +28,13 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     private Wall wall;
 
+    private Highscore highscore;
+
     private String message;
 
     private boolean showPauseMenu;
     private boolean showEndScreen;
+    private boolean stopReceivingInput;
 
     private Font menuFont;
 
@@ -52,6 +55,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private static int resetScore;
 
 
+
     public GameBoard(GameFrame owner,Highscore highscore){
         super();
 
@@ -59,10 +63,12 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         strLen = 0;
         showPauseMenu = false;
         showEndScreen = false;
+        stopReceivingInput = false;
 
         highscore.readScores();
 
         this.owner= owner;
+        this.highscore = highscore;
 
         menuFont = new Font("Monospaced",Font.PLAIN,TEXT_SIZE);
         
@@ -82,6 +88,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             if(wall.isBallLost()){
                 if(wall.ballEnd()){
                     highscore.updateScores(score);
+                    stopReceivingInput = true;
                     showEndScreen= true;
                     message = "Game over";
                     wall.ballReset();
@@ -101,9 +108,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 else{
                     highscore.updateScores(score);
                     message = "ALL WALLS DESTROYED";
+                    stopReceivingInput = true;
                     showEndScreen= true;
                     wall.ballReset();
-                    
                 }
             }
 
@@ -199,7 +206,44 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     private void drawMenu(Graphics2D g2d){
         obscureGameBoard(g2d);
-        drawPauseMenu(g2d);
+        
+        g2d.setFont(menuFont);
+        g2d.setColor(MENU_COLOR);
+
+        FontRenderContext frc = g2d.getFontRenderContext();
+        strLen = menuFont.getStringBounds(PAUSE,frc).getBounds().width;
+
+        int x = (this.getWidth() - strLen) / 2;
+        int y = this.getHeight() / 10;
+        g2d.drawString(PAUSE,x,y);
+
+        y+=50;
+        if(continueButtonRect == null){
+            continueButtonRect = menuFont.getStringBounds(CONTINUE,frc).getBounds();
+            continueButtonRect.setLocation((int) (this.getWidth()/2-continueButtonRect.getWidth()/2),y-continueButtonRect.height);
+        }
+        g2d.drawString(CONTINUE,(int) (this.getWidth()/2-continueButtonRect.getWidth()/2),y);
+
+        y+=50;
+        if(restartButtonRect == null){
+            restartButtonRect = menuFont.getStringBounds(RESTART,frc).getBounds();
+            restartButtonRect.setLocation((int) (this.getWidth()/2-restartButtonRect.getWidth()/2),y-restartButtonRect.height);
+        }
+        g2d.drawString(RESTART,(int) (this.getWidth()/2-restartButtonRect.getWidth()/2),y);
+
+        y+=50;
+        if(mainmenuButtonRect == null){
+            mainmenuButtonRect = menuFont.getStringBounds(MAINMENU,frc).getBounds();
+            mainmenuButtonRect.setLocation((int)(this.getWidth()/2-mainmenuButtonRect.getWidth()/2),y-mainmenuButtonRect.height);
+        }
+        g2d.drawString(MAINMENU,(int)(this.getWidth()/2-mainmenuButtonRect.getWidth()/2),y);
+
+        y+=50;
+        if(exitButtonRect == null){
+            exitButtonRect = menuFont.getStringBounds(EXIT,frc).getBounds();
+            exitButtonRect.setLocation((int) (this.getWidth()/2-exitButtonRect.getWidth()/2),y-exitButtonRect.height);
+        }
+        g2d.drawString(EXIT,(int) (this.getWidth()/2-exitButtonRect.getWidth()/2),y);
     }
 
     private void drawEndScreen(Graphics2D g2d){
@@ -207,15 +251,19 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         g2d.setFont(menuFont);
         g2d.setColor(MENU_COLOR);
+        FontRenderContext frc = g2d.getFontRenderContext();
 
         if(mainmenuButtonRect == null){
-            FontRenderContext frc = g2d.getFontRenderContext();
             mainmenuButtonRect = menuFont.getStringBounds(MAINMENU,frc).getBounds();
-            mainmenuButtonRect.setLocation((int)(owner.getWidth()/2-mainmenuButtonRect.getWidth()/2),(int) (owner.getHeight()/2-mainmenuButtonRect.getHeight()));
+            mainmenuButtonRect.setLocation((int)(this.getWidth()/2-mainmenuButtonRect.getWidth()/2),(int) (this.getHeight()/3-mainmenuButtonRect.getHeight()));
         }
+        g2d.drawString(MAINMENU,(int)(this.getWidth()/2-mainmenuButtonRect.getWidth()/2),(int) (this.getHeight()/3));
 
-        g2d.drawString(MAINMENU,(int)(owner.getWidth()/2-mainmenuButtonRect.getWidth()/2),(int) (owner.getHeight()/2));
-
+        if(exitButtonRect == null){
+            exitButtonRect = menuFont.getStringBounds(EXIT,frc).getBounds();
+            exitButtonRect.setLocation((int) (this.getWidth()/2-exitButtonRect.getWidth()/2),(int) ((this.getHeight()/3)*2-exitButtonRect.getHeight()));
+        }
+        g2d.drawString(EXIT,(int) (this.getWidth()/2-exitButtonRect.getWidth()/2),(int) ((this.getHeight()/3)*2));
     }
 
     private void obscureGameBoard(Graphics2D g2d){
@@ -224,57 +272,11 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         AlphaComposite ac = AlphaComposite.getInstance(AlphaComposite.SRC_OVER,0.55f);
         g2d.setComposite(ac);
-
         g2d.setColor(Color.BLACK);
         g2d.fillRect(0,0,DEF_WIDTH,DEF_HEIGHT);
 
         g2d.setComposite(tmp);
         g2d.setColor(tmpColor);
-    }
-
-    private void drawPauseMenu(Graphics2D g2d){
-        g2d.setFont(menuFont);
-        g2d.setColor(MENU_COLOR);
-
-        if(strLen == 0){
-            FontRenderContext frc = g2d.getFontRenderContext();
-            strLen = menuFont.getStringBounds(PAUSE,frc).getBounds().width;
-        }
-
-        int x = (this.getWidth() - strLen) / 2;
-        int y = this.getHeight() / 10;
-
-        g2d.drawString(PAUSE,x,y);
-
-        x = this.getWidth() / 8;
-        y = this.getHeight() / 4;
-
-
-        if(continueButtonRect == null){
-            FontRenderContext frc = g2d.getFontRenderContext();
-            continueButtonRect = menuFont.getStringBounds(CONTINUE,frc).getBounds();
-            continueButtonRect.setLocation(x,y-continueButtonRect.height);
-        }
-
-        g2d.drawString(CONTINUE,x,y);
-
-        y *= 2;
-
-        if(restartButtonRect == null){
-            restartButtonRect = (Rectangle) continueButtonRect.clone();
-            restartButtonRect.setLocation(x,y-restartButtonRect.height);
-        }
-
-        g2d.drawString(RESTART,x,y);
-
-        y *= 3.0/2;
-
-        if(exitButtonRect == null){
-            exitButtonRect = (Rectangle) continueButtonRect.clone();
-            exitButtonRect.setLocation(x,y-exitButtonRect.height);
-        }
-
-        g2d.drawString(EXIT,x,y);
     }
 
     public void setResetscrore(){
@@ -295,6 +297,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     @Override
     public void keyPressed(KeyEvent keyEvent) {
+        if(stopReceivingInput){
+            return;
+        }
         switch(keyEvent.getKeyCode()){
             case KeyEvent.VK_A:
                 A_check = true;
@@ -334,12 +339,14 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 debugConsole.setVisible(true);
                 break;
             default:
-               
         }
     }
 
     @Override
     public void keyReleased(KeyEvent keyEvent) {
+        if(stopReceivingInput){
+            return;
+        }
         switch(keyEvent.getKeyCode()){
             case KeyEvent.VK_A:
                 A_check = false;
@@ -386,7 +393,13 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 showPauseMenu = false;
                 repaint();
             }
+            else if(mainmenuButtonRect.contains(p)){
+                highscore.updateScores(score);
+                gameTimer.stop();
+                owner.revertGameboard();
+            }
             else if(exitButtonRect.contains(p)){
+                highscore.updateScores(score);
                 System.exit(0);
                 score=0;
             }
@@ -395,6 +408,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             if(mainmenuButtonRect.contains(p)){
                 gameTimer.stop();
                 owner.revertGameboard();
+            }
+            else if(exitButtonRect.contains(p)){
+                System.exit(0);
+                score=0;
             }
         }
     }
@@ -428,12 +445,12 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     public void mouseMoved(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
         if(showPauseMenu) {
-            if (exitButtonRect.contains(p) || continueButtonRect.contains(p) || restartButtonRect.contains(p))
+            if (exitButtonRect.contains(p) || continueButtonRect.contains(p) || restartButtonRect.contains(p) || mainmenuButtonRect.contains(p))
                 this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             else
                 this.setCursor(Cursor.getDefaultCursor());
         }else if(showEndScreen) {
-            if (mainmenuButtonRect.contains(p))
+            if (mainmenuButtonRect.contains(p) || exitButtonRect.contains(p) )
                 this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             else
                 this.setCursor(Cursor.getDefaultCursor());
