@@ -5,6 +5,9 @@ import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 
 
+/**
+ * Child class of the super class Brick.
+ */
 public class CementBrick extends Brick {
     public static final int MIN_CRACK = 1;
     public static final int DEF_CRACK_DEPTH = 1;
@@ -26,11 +29,28 @@ public class CementBrick extends Brick {
         brickFace = super.brickFace;
     }
 
+    
+    /** 
+     * Makes the collision area for the brick.
+     * 
+     * @param pos Position of the brick.
+     * @param size Size of the brick.
+     * @return Returns the shape of the brick, rectangle.
+     */
     @Override
     protected Shape makeBrickFace(Point pos, Dimension size) {
         return new Rectangle(pos,size);
     }
 
+    
+    /** 
+     * Overrides the setImpact method to use the ball's point of impact and as well as 
+     * the direction of the impact to draw the crack.
+     * 
+     * @param point Collision area of the ball.
+     * @param dir Direction of the impact.
+     * @return Returns false if the brick has already been broken, else true.
+     */
     @Override
     public boolean setImpact(Point2D point, int dir) {
         if(super.isBroken())
@@ -45,11 +65,21 @@ public class CementBrick extends Brick {
     }
 
 
+    
+    /** 
+     * Getter method to return the collision area of the brick.
+     * 
+     * @return Returns the shape of the brick, rectangle.
+     */
     @Override
     public Shape getBrick() {
         return brickFace;
     }
 
+    /**
+     * Method that updates the brick with a crack if it has impacted with a ball.
+     * 
+     */
     private void updateBrick(){
         if(!super.isBroken()){
             GeneralPath gp = crack.draw();
@@ -58,6 +88,9 @@ public class CementBrick extends Brick {
         }
     }
 
+    /**
+     * Method that repairs the brick.
+     */
     public void repair(){
         super.repair();
         crack.reset();

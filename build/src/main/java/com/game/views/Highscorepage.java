@@ -8,7 +8,13 @@ import com.game.highscore.Highscore;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 
-public class Highscorepage extends JLayeredPane{
+/**
+ * Class that acts as the view for the HighScore page.
+ * Within this page there is a JTextArea and a JLabel that acts as the button.
+ * The JTextArea displays the list of highscores.
+ * The back button returns to the HomeMenu.
+ */
+public class HighscorePage extends JLayeredPane{
     JLabel background = new JLabel();
     ImageIcon highscorepage = new ImageIcon(getClass().getResource("/highscorepage.png"));
 
@@ -21,7 +27,7 @@ public class Highscorepage extends JLayeredPane{
     private int[] scores;
     private String scoredisplay ="";
 
-    public Highscorepage(GameFrame owner,Highscore highscore){
+    public HighscorePage(GameFrame owner,Highscore highscore){
         this.setFocusable(true);
         this.requestFocusInWindow();
         this.setLayout(null);

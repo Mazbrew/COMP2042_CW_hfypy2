@@ -4,7 +4,9 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Random;
 
-
+/**
+ * Child class of the super class Brick.
+ */
 public class SteelBrick extends Brick {
 
     private static final String NAME = "Steel Brick";
@@ -23,23 +25,44 @@ public class SteelBrick extends Brick {
     }
 
 
+    /** 
+     * Method that makes the collision area for the brick.
+     * 
+     * @param pos Position of the brick.
+     * @param size Size of the brick.
+     * @return Returns the shape of the brick, rectangle.
+     */
     @Override
     protected Shape makeBrickFace(Point pos, Dimension size) {
         return new Rectangle(pos,size);
     }
 
+
+    /** 
+     * Getter method to return the collision area of the brick.
+     * 
+     * @return Returns the shape of the brick, rectangle.
+     */
     @Override
     public Shape getBrick() {
         return brickFace;
     }
 
+    /**
+     * Override for the setImpact method in the super class. 
+     * Runs it's own impact instead of ther superclass's impact
+     */
+    @Override
     public  boolean setImpact(Point2D point , int dir){
         if(super.isBroken())
             return false;
-        impact();
+        this.impact();
         return  super.isBroken();
     }
 
+    /**
+     * Method that calls the super classes's impact by chance.
+     */
     public void impact(){
         if(rnd.nextDouble() < STEEL_PROBABILITY){
             super.impact();

@@ -6,7 +6,18 @@ import javax.swing.event.MouseInputListener;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 
-
+/**
+ * Class that acts as the view for the HomeMenu. 
+ * Within the HomeMenu there are 4 buttons ,PLAY,INFO,HIGHSCORE,EXIT.
+ * <br>
+ * PLAY - starts the game
+ * <br>
+ * INFO - teachs the user how to play the game.
+ * <br>
+ * HIGHSCORE - displays the user's highscores.
+ * <br>
+ * EXIT - exits the game.
+ */
 public class HomeMenu extends JLayeredPane{
     private JLabel background = new JLabel();
     private ImageIcon wall = new ImageIcon(getClass().getResource("/brickpattern.png"));

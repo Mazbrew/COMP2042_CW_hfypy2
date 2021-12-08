@@ -14,7 +14,7 @@ import java.awt.event.*;
 import java.awt.font.FontRenderContext;
 
 /**
- * Class that handles all of the game logic.
+ * Class that draws out the game and also handles keypress logic.
  */
 public class GameBoard extends JComponent implements KeyListener,MouseListener,MouseMotionListener {
 

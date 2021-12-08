@@ -3,6 +3,9 @@ package com.game.wall;
 import java.awt.*;
 import java.awt.Point;
 
+/**
+ * Child class of the super class Brick.
+ */
 public class ClayBrick extends Brick {
 
     private static final String NAME = "Clay Brick";
@@ -14,11 +17,25 @@ public class ClayBrick extends Brick {
         super(NAME,point,size,DEF_BORDER,DEF_INNER,CLAY_STRENGTH);
     }
 
+    
+    /** 
+     * Makes the collision area for the brick.
+     * 
+     * @param pos Position of the brick.
+     * @param size Size of the brick.
+     * @return Returns the shape of the brick, rectangle.
+     */
     @Override
     protected Shape makeBrickFace(Point pos, Dimension size) {
         return new Rectangle(pos,size);
     }
 
+    
+    /** 
+     * Getter method to return the collision area of the brick.
+     * 
+     * @return Returns the shape of the brick, rectangle.
+     */
     @Override
     public Shape getBrick() {
         return super.brickFace;
