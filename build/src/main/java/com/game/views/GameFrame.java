@@ -2,6 +2,8 @@ package com.game.views;
 
 import javax.swing.*;
 
+import com.game.highscore.Highscore;
+
 import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;

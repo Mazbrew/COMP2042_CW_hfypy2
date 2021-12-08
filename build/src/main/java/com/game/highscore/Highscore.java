@@ -1,4 +1,4 @@
-package com.game.views;
+package com.game.highscore;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -43,7 +43,6 @@ public class Highscore{
 
             for(int i=0; i<totalScores; i++) {
               scores[i] = fscanf.nextInt();
-              System.out.println(scores[i]);
             }
             fscanf.close();
             

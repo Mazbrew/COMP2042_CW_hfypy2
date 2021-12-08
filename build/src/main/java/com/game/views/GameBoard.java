@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import com.game.ball.Ball;
 import com.game.debug.DebugConsole;
+import com.game.highscore.Highscore;
 import com.game.player.Player;
 import com.game.wall.Brick;
 import com.game.wall.Wall;
