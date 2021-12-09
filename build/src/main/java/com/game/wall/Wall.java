@@ -1,6 +1,7 @@
 package com.game.wall;
 
 import java.awt.*;
+import java.util.Random;
 
 import com.game.ball.Ball;
 import com.game.player.Player;
@@ -12,7 +13,7 @@ import com.game.views.GameFrame;
  */
 public class Wall {
 
-    private static final int LEVELS_COUNT = 10;
+    private static final int LEVELS_COUNT = 9;
 
     private static final int CLAY = 1;
     private static final int STEEL = 2;
@@ -112,7 +113,6 @@ public class Wall {
         return tmp;
 
     }
-
     
     /** 
      * Method that makes a level with 2 types of bricks.
@@ -181,13 +181,12 @@ public class Wall {
         tmp[0] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY);
         tmp[1] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,CEMENT);
         tmp[2] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CEMENT);
-        tmp[3] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CEMENT,SPEED);
-        tmp[4] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,STEEL);
-        tmp[5] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
-        tmp[6] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SLIME);
-        tmp[7] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,GRAVITY);
-        tmp[8] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SLIME,GRAVITY);
-        tmp[9] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SPEED);
+        tmp[3] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,STEEL);
+        tmp[4] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
+        tmp[5] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SLIME);
+        tmp[6] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,GRAVITY);
+        tmp[7] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SLIME,GRAVITY);
+        tmp[8] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SPEED,GRAVITY);
         return tmp;
     }
 

@@ -13,10 +13,10 @@ public class SpeedBrick extends Brick{
     private static final String NAME = "Speed Brick";
     private static final Color DEF_INNER = new Color(255, 000, 000).darker();
     private static final Color DEF_BORDER = new Color(255, 000, 000);
-    private static final int SLIME_STRENGTH = 1;
+    private static final int SPEED_STRENGTH = 1;
 
     public SpeedBrick(Point point, Dimension size){
-        super(NAME,point,size,DEF_BORDER,DEF_INNER,SLIME_STRENGTH);
+        super(NAME,point,size,DEF_BORDER,DEF_INNER,SPEED_STRENGTH);
         
     }
 

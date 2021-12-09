@@ -16,10 +16,10 @@ public class GravityBrick extends Brick {
     private static final String NAME = "Gravity Brick";
     private static final Color DEF_INNER =  Color.BLACK;
     private static final Color DEF_BORDER = Color.BLACK;
-    private static final int CLAY_STRENGTH = 1;
+    private static final int GRAVITY_STRENGTH = 1;
 
     public GravityBrick(Point point, Dimension size){
-        super(NAME,point,size,DEF_BORDER,DEF_INNER,CLAY_STRENGTH);
+        super(NAME,point,size,DEF_BORDER,DEF_INNER,GRAVITY_STRENGTH);
     }
 
     
