@@ -8,7 +8,7 @@ import com.game.ball.Ball;
 import org.junit.Test;
 
 /**
- * Test class to ensure that all of the ball reversing logic is working.
+ * Test class to test Ball.java
  */
 public class BallTest
 {

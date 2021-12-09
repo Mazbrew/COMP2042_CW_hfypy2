@@ -32,11 +32,11 @@ public class Player {
 
     
     /** 
-     * Method that creates the hit box of the player.
+     * Method that creates the player.
      * 
-     * @param width Width of the hit box.
-     * @param height Height of the hit box.
-     * @return Rectangle Shape of the hit box of the player.
+     * @param width Width of the player.
+     * @param height Height of the player.
+     * @return Rectangle Shape of the player.
      */
     private Rectangle makeRectangle(int width,int height){
         Point p = new Point((int)(playerPoint.getX() - (width / 2)),(int)playerPoint.getY());
@@ -60,9 +60,7 @@ public class Player {
      */
     public void move(){
         double x = playerPoint.getX() + moveAmount;
-        if(x < min || x > max){
-            return;
-        }else if(x-min < DEF_MOVE_AMOUNT){
+        if(x-min < DEF_MOVE_AMOUNT){
             x = min;
         }else if(max-x < DEF_MOVE_AMOUNT){
             x = max ;
@@ -97,9 +95,9 @@ public class Player {
 
     
     /** 
-     * Getter method that returns the shape of the hit box.
+     * Getter method that returns the shape of the player.
      * 
-     * @return Returns the shape of the hit box, rectangle.
+     * @return Returns the shape of the player, rectangle.
      */
     public Shape getPlayerFace(){
         return  playerFace;
@@ -107,7 +105,7 @@ public class Player {
 
     
     /** 
-     * Moves the player to a specified point.
+     * Moves the player and it's player to a specified point.
      * 
      * @param p The desired X and Y position for the player.
      */
@@ -147,6 +145,14 @@ public class Player {
      * @return Returns the value for min.
      */
     public int getMin(){
-        return max;
+        return min;
+    }
+
+    /**
+     * Getter method for the PlayerPoint.
+     * @return Returns the PlayerPoint
+     */
+    public Point getplayerPoint(){
+        return playerPoint;
     }
 }
