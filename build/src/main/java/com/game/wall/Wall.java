@@ -1,7 +1,6 @@
 package com.game.wall;
 
 import java.awt.*;
-import java.util.Random;
 
 import com.game.ball.Ball;
 import com.game.player.Player;
