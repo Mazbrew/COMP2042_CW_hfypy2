@@ -62,7 +62,7 @@ public class GravityBrick extends Brick {
 
     
     /** 
-     * Method that makes the collision area for the brick.
+     * Method that makes the hit box for the brick.
      * 
      * @param pos Position of the brick.
      * @param size Size of the brick.
@@ -75,7 +75,7 @@ public class GravityBrick extends Brick {
 
     
     /** 
-     * Getter method to return the collision area of the brick.
+     * Getter method to return the hit box of the brick.
      * 
      * @return Returns the shape of the brick, rectangle.
      */

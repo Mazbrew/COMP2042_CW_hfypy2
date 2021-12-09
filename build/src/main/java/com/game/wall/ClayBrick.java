@@ -19,7 +19,7 @@ public class ClayBrick extends Brick {
 
     
     /** 
-     * Makes the collision area for the brick.
+     * Makes the hit box for the brick.
      * 
      * @param pos Position of the brick.
      * @param size Size of the brick.
@@ -32,7 +32,7 @@ public class ClayBrick extends Brick {
 
     
     /** 
-     * Getter method to return the collision area of the brick.
+     * Getter method to return the hit box of the brick.
      * 
      * @return Returns the shape of the brick, rectangle.
      */

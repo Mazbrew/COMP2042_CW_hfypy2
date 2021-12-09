@@ -31,7 +31,7 @@ public class CementBrick extends Brick {
 
     
     /** 
-     * Makes the collision area for the brick.
+     * Makes the hti box for the brick.
      * 
      * @param pos Position of the brick.
      * @param size Size of the brick.
@@ -47,7 +47,7 @@ public class CementBrick extends Brick {
      * Overrides the setImpact method to use the ball's point of impact and as well as 
      * the direction of the impact to draw the crack.
      * 
-     * @param point Collision area of the ball.
+     * @param point hit box of the ball.
      * @param dir Direction of the impact.
      * @return Returns false if the brick has already been broken, else true.
      */
@@ -67,7 +67,7 @@ public class CementBrick extends Brick {
 
     
     /** 
-     * Getter method to return the collision area of the brick.
+     * Getter method to return the hit box of the brick.
      * 
      * @return Returns the shape of the brick, rectangle.
      */

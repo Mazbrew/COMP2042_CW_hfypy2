@@ -35,11 +35,11 @@ public class Player {
 
     
     /** 
-     * Method that creates the collision area of the player.
+     * Method that creates the hit box of the player.
      * 
-     * @param width Width of the collision area.
-     * @param height Height of the collision area.
-     * @return Rectangle Shape of the collision area.
+     * @param width Width of the hit box.
+     * @param height Height of the hit box.
+     * @return Rectangle Shape of the hit box of the player.
      */
     private Rectangle makeRectangle(int width,int height){
         Point p = new Point((int)(playerPoint.getX() - (width / 2)),(int)playerPoint.getY());
@@ -48,10 +48,10 @@ public class Player {
 
     
     /** 
-     * Method that detects the collision of the ball and the player.
+     * Method that detects the impact of the ball and the player.
      * 
      * @param b An instance of the ball class
-     * @return Returns true if collision is detected else it'll return false.
+     * @return Returns true if impact is detected else it'll return false.
      */
     public boolean impact(Ball b){
         return playerFace.contains(b.getPosition());
@@ -100,9 +100,9 @@ public class Player {
 
     
     /** 
-     * Getter method that returns the shape of the collision box.
+     * Getter method that returns the shape of the hit box.
      * 
-     * @return Returns the shape of the collision box, rectangle.
+     * @return Returns the shape of the hit box, rectangle.
      */
     public Shape getPlayerFace(){
         return  playerFace;

@@ -47,10 +47,10 @@ abstract public class Brick {
     
     /** 
      * Setter method to set whether or not the brick has been broken.
-     * Is overrided by some of the brick types to get the point of collion on the brick and the part of the ball that
-     * collides with said brick.
+     * Is overrided by some of the brick types to get the point of impact on the brick and the part of the ball that
+     * impacts with said brick.
      * 
-     * @param point Collision area of the ball.
+     * @param point impact of the ball.
      * @param dir Direction of the impact.
      * @return Returns false if the brick has already been broken, else true.
      */
@@ -91,7 +91,7 @@ abstract public class Brick {
 
     
     /** 
-     * Method that finds the when the ball has collided with the bricks.
+     * Method that finds the when the ball has impacted the bricks.
      * It is overrided by some of the brick types.
      * 
      * @param b Instance of the ball class.
@@ -132,7 +132,7 @@ abstract public class Brick {
     }
 
     /**
-     * Method that is called when the ball collides with the brick.
+     * Method that is called when the ball imapcts the brick.
      */
     public void impact(){
         strength--;
