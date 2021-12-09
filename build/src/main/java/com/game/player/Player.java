@@ -13,7 +13,7 @@ public class Player {
     public static final Color BORDER_COLOR = Color.lightGray.darker().darker();
     public static final Color INNER_COLOR = Color.lightGray;
 
-    private static final int DEF_MOVE_AMOUNT = 8;
+    private static final int DEF_MOVE_AMOUNT = 10;
 
     private Rectangle playerFace;
     private Point playerPoint;

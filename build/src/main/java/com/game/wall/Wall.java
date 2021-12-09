@@ -12,15 +12,18 @@ import com.game.views.GameFrame;
  */
 public class Wall {
 
-    private static final int LEVELS_COUNT = 8;
+    private static final int LEVELS_COUNT = 10;
 
     private static final int CLAY = 1;
     private static final int STEEL = 2;
     private static final int CEMENT = 3;
     private static final int SLIME = 4;
     private static final int GRAVITY = 5;
+    private static final int SPEED = 6;
 
     private static int bpcheck;
+    private static int bbcheckx;
+    private static int bbchecky;
 
     private Rectangle area;
 
@@ -60,7 +63,6 @@ public class Wall {
         player = new Player((Point) ballPos.clone(),150,10, drawArea);
 
         area = drawArea;
-
 
     }
 
@@ -179,11 +181,13 @@ public class Wall {
         tmp[0] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY);
         tmp[1] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,CEMENT);
         tmp[2] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CEMENT);
-        tmp[3] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,STEEL);
-        tmp[4] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
-        tmp[5] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SLIME);
-        tmp[6] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,GRAVITY);
-        tmp[7] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SLIME,GRAVITY);
+        tmp[3] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CEMENT,SPEED);
+        tmp[4] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,STEEL);
+        tmp[5] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
+        tmp[6] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SLIME);
+        tmp[7] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,GRAVITY);
+        tmp[8] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SLIME,GRAVITY);
+        tmp[9] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,SPEED);
         return tmp;
     }
 
@@ -202,6 +206,15 @@ public class Wall {
         if(bpcheck!=0){
             bpcheck--;
         }
+
+        if(bbcheckx !=0){
+            bbcheckx--;
+        }
+
+        if(bbchecky !=0){
+            bbchecky--;
+        }
+
        
         if(player.impact(ball) && bpcheck==0){
             bpcheck = 10;
@@ -211,10 +224,12 @@ public class Wall {
             gameboard.setScore();
             brickCount--;
         }
-        else if((ball.getPosition().getX() < area.getX()) || (ball.getPosition().getX() > area.getX() + area.getWidth())) {
+        else if(((ball.getPosition().getX() < area.getX()) || (ball.getPosition().getX() > area.getX() + area.getWidth())) && bbcheckx==0) {
+            bbcheckx =10;
             ball.reverseX();
         }
-        else if(ball.getPosition().getY() < area.getY()){
+        else if((ball.getPosition().getY() < area.getY()) && bbchecky==0){
+            bbchecky =10;
             ball.reverseY();
         }
         else if(ball.getPosition().getY() > area.getY() + area.getHeight()){
@@ -233,15 +248,23 @@ public class Wall {
         for(Brick b : bricks){
             switch(b.findBrickImpact(ball,owner)) {
                 case Brick.UP_IMPACT:
+                    bbcheckx =0;
+                    bbchecky =0;
                     ball.reverseY();
                     return b.setImpact(ball.down, Crack.UP);
                 case Brick.DOWN_IMPACT:
+                    bbcheckx =0;
+                    bbchecky =0;
                     ball.reverseY();
                     return b.setImpact(ball.up,Crack.DOWN);
                 case Brick.LEFT_IMPACT:
+                    bbcheckx =0;
+                    bbchecky =0;
                     ball.reverseX();
                     return b.setImpact(ball.right,Crack.RIGHT);
                 case Brick.RIGHT_IMPACT:
+                    bbcheckx =0;
+                    bbchecky =0;
                     ball.reverseX();
                     return b.setImpact(ball.left,Crack.LEFT);
             }
@@ -395,6 +418,9 @@ public class Wall {
                 break;
             case GRAVITY:
                 out = new GravityBrick(point,size);
+                break;
+            case SPEED:
+                out = new SpeedBrick(point,size);
                 break;
             default:
                 throw  new IllegalArgumentException(String.format("Unknown Type:%d\n",type));

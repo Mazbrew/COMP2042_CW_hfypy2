@@ -311,17 +311,20 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         g2d.setColor(MENU_COLOR);  
         FontRenderContext frc = g2d.getFontRenderContext();
 
+        int y = 200;
+
         if(mainmenuButtonRect == null){
             mainmenuButtonRect = menuFont.getStringBounds(MAINMENU,frc).getBounds();
-            mainmenuButtonRect.setLocation((int)(this.getWidth()/2-mainmenuButtonRect.getWidth()/2),(int) (this.getHeight()/3-mainmenuButtonRect.getHeight()));
+            mainmenuButtonRect.setLocation((int) (this.getWidth()/2-mainmenuButtonRect.getWidth()/2),y-mainmenuButtonRect.height);
         }
-        g2d.drawString(MAINMENU,(int)(this.getWidth()/2-mainmenuButtonRect.getWidth()/2),(int) (this.getHeight()/3));
+        g2d.drawString(MAINMENU,(int)(this.getWidth()/2-mainmenuButtonRect.getWidth()/2),y);
 
+        y+=50;
         if(exitButtonRect == null){
             exitButtonRect = menuFont.getStringBounds(EXIT,frc).getBounds();
-            exitButtonRect.setLocation((int) (this.getWidth()/2-exitButtonRect.getWidth()/2),(int) ((this.getHeight()/3)*2-exitButtonRect.getHeight()));
+            exitButtonRect.setLocation((int) (this.getWidth()/2-exitButtonRect.getWidth()/2),y-exitButtonRect.height);
         }
-        g2d.drawString(EXIT,(int) (this.getWidth()/2-exitButtonRect.getWidth()/2),(int) ((this.getHeight()/3)*2));
+        g2d.drawString(EXIT,(int) (this.getWidth()/2-exitButtonRect.getWidth()/2),y);
     }
 
     
@@ -489,6 +492,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             }
             else if(restartButtonRect.contains(p)){
                 message = "Restarting Level, Press [SPACE] to continue";
+                wall.resetBallCount();
                 wall.ballReset();
                 wall.wallReset();
                 showPauseMenu = false;
@@ -578,7 +582,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             else
                 this.setCursor(Cursor.getDefaultCursor());
-        }else if(showEndScreen) {
+        }
+        
+        if(showEndScreen) {
             if (mainmenuButtonRect.contains(p) || exitButtonRect.contains(p) )
                 this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             else
