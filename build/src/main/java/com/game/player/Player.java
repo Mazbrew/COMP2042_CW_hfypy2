@@ -21,14 +21,11 @@ public class Player {
     private int min;
     private int max;
 
-    private int width;
-
     public Player(Point playerPoint,int width,int height,Rectangle container) {
-        this.width = width;
         this.playerPoint = playerPoint;
         moveAmount = 0;
         playerFace = makeRectangle(width, height);
-        min = container.x + (width / 2);
+        min = width/2;
         max = min + container.width - width;
 
     }
@@ -66,7 +63,7 @@ public class Player {
         if(x < min || x > max){
             return;
         }else if(x-min < DEF_MOVE_AMOUNT){
-            x = width/2;
+            x = min;
         }else if(max-x < DEF_MOVE_AMOUNT){
             x = max ;
         }
@@ -117,5 +114,39 @@ public class Player {
     public void moveTo(Point p){
         playerPoint.setLocation(p);
         playerFace.setLocation(playerPoint.x - (int)playerFace.getWidth()/2,playerPoint.y);
+    }
+
+    /**
+     * Getter method for the moveAmount.
+     * 
+     * @return Returns the moveAmount.
+     */
+    public int getmoveAmount(){
+        return moveAmount;
+    }
+
+    /**
+     * Setter method for the moveAmount.
+     * 
+     * @return Returns the moveAmount.
+     */
+    public void setmoveAmount(int setter){
+        moveAmount= setter;
+    }
+
+    /**
+     * Getter method for the max.
+     * @return Returns the value for max.
+     */
+    public int getMax(){
+        return max;
+    }
+
+    /**
+     * Getter method for the min.
+     * @return Returns the value for min.
+     */
+    public int getMin(){
+        return max;
     }
 }

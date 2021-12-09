@@ -111,4 +111,20 @@ public class Highscore{
             }
         }
     }
+
+    /**
+     * Getter method to get the scores array.
+     * @return Returns the scores array.
+     */
+    public int[] getScores(){
+        return scores;
+    }
+
+    /**
+     * Setter method to set the scores aray.
+     * @param scoreslist An array of scores.
+     */
+    public void setScores(int[] scoreslist){
+        scores= scoreslist;
+    }
 }
