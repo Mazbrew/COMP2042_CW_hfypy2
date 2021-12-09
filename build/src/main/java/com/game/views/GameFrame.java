@@ -8,25 +8,24 @@ import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 
-
+/**
+ * Class that opens the GameFrame JFrame. 
+ * Said GameFrame will accomodate other view such as the GameBoard, Highscore Page, HomeMenu and InfoPage.
+ * By default the first view is the HomeMenu.
+ */
 public class GameFrame extends JFrame implements WindowFocusListener {
 
     private static final String DEF_TITLE = "Brick Destroyer";
 
     private static GameBoard gameBoard;
     private static HomeMenu homeMenu;
-    private static infopage infopage;
-    private static Highscorepage highscorepage;
+    private static InfoPage infopage;
+    private static HighscorePage highscorepage;
     private static Highscore highscore;
-
-    private boolean gaming;
 
     public GameFrame(){
         super();
         highscore = new Highscore();
-
-        gaming = false;
-
         
         
         homeMenu = new HomeMenu(this);
@@ -34,6 +33,9 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         
     }
 
+    /**
+     * Method that initializes the GameFrame
+     */
     public void initialize(){
         this.setTitle(DEF_TITLE);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -46,6 +48,9 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.setIconImage(icon.getImage());
     }
 
+    /**
+     * Method that enables the GameBoard and removes the HomeMenu.
+     */
     public void enableGameBoard(){
         gameBoard = new GameBoard(this,highscore);
         this.add(gameBoard,BorderLayout.CENTER);
@@ -54,14 +59,20 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.initialize();
     }
 
+    /**
+     * Method that enables the Infopage and removes the HomeMenu.
+     */
     public void enableInfo(){
-        infopage = new infopage(this);
+        infopage = new InfoPage(this);
         this.add(infopage,BorderLayout.CENTER);
         this.remove(homeMenu);
         
         this.initialize();
     }
 
+    /**
+     * Method that enables the HomeMenu and removes the InfoPage.
+     */
     public void revertInfopage(){
         this.add(homeMenu,BorderLayout.CENTER);
         this.remove(infopage);
@@ -69,6 +80,9 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.initialize();
     }
 
+    /**
+     * Method that enables the HomeMenu and removes the GameBoard.
+     */
     public void revertGameboard(){
         this.add(homeMenu,BorderLayout.CENTER);
         this.remove(gameBoard);
@@ -77,14 +91,20 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
     }
 
+    /**
+     * Method that enables the HighscorePage and remvoes the HomeMenu.
+     */
     public void enableHighscore(){
-        highscorepage = new Highscorepage(this,highscore);
+        highscorepage = new HighscorePage(this,highscore);
         this.add(highscorepage,BorderLayout.CENTER);
         this.remove(homeMenu);
         
         this.initialize();
     }
 
+    /**
+     * Method that enables the Homemenu and removes the HighscorePage.
+     */
     public void revertHighscorepage(){
         this.add(homeMenu,BorderLayout.CENTER);
         this.remove(highscorepage);
@@ -92,7 +112,9 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.initialize();
     }
 
-
+    /**
+     * Locates the center of the screen and moves the GameFrame to said position.
+     */
     public void autoLocate(){
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (size.width - this.getWidth()) / 2;
@@ -101,15 +123,24 @@ public class GameFrame extends JFrame implements WindowFocusListener {
     }
 
 
+    
+    /** 
+     * Unused interface.
+     */
     @Override
     public void windowGainedFocus(WindowEvent windowEvent) {
-        gaming = true;
+
     }
 
+    
+    /** 
+     * Interface that detects when the window, GameFrame, has lost focus.
+     * When the window has lost focus, the gameboard's onLostFocus() method will be called.
+     * 
+     * @param windowEvent Window information.
+     */
     @Override
     public void windowLostFocus(WindowEvent windowEvent) {
-        if(gaming)
-            gameBoard.onLostFocus();
-
+        gameBoard.onLostFocus();
     }
 }

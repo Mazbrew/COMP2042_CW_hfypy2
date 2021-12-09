@@ -6,7 +6,11 @@ import javax.swing.event.MouseInputListener;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 
-public class infopage extends JLayeredPane{
+/**
+ * Class that acts as the view for the InfoPage. This class displays an image of the rules of the game.
+ * It also contains the BACK button that returns to the HomeMenu.
+ */
+public class InfoPage extends JLayeredPane{
     private JLabel background = new JLabel();
     private ImageIcon infopage = new ImageIcon(getClass().getResource("/infopage.png"));
 
@@ -14,7 +18,7 @@ public class infopage extends JLayeredPane{
     private ImageIcon backbuttonsprite = new ImageIcon(getClass().getResource("/BACK.png"));
     private ImageIcon backbuttonalt = new ImageIcon(getClass().getResource("/BACKalt.png"));
 
-    public infopage(GameFrame owner){
+    public InfoPage(GameFrame owner){
         this.setFocusable(true);
         this.requestFocusInWindow();
         this.setLayout(null);

@@ -8,6 +8,9 @@ import javax.swing.JFrame;
 
 import com.game.ball.Ball;
 
+/**
+ * Child class of the super class Brick.
+ */
 public class GravityBrick extends Brick {
 
     private static final String NAME = "Gravity Brick";
@@ -19,6 +22,16 @@ public class GravityBrick extends Brick {
         super(NAME,point,size,DEF_BORDER,DEF_INNER,CLAY_STRENGTH);
     }
 
+    
+    /** 
+     * Override of the findBrickImpact method within the super class.
+     * Whenever a impact is detected, the owner will be moved to a new random location on the screen.
+     * Logic to prevent the gameboard from being covered was added.
+     * 
+     * @param b Instance of the ball class.
+     * @param owner Instance of the Gameframe.
+     * @return Returns point of impact.
+     */
     @Override
     public int findBrickImpact(Ball b,JFrame owner){
         Random rnd = new Random();
@@ -47,11 +60,25 @@ public class GravityBrick extends Brick {
         return out;
     }
 
+    
+    /** 
+     * Method that makes the hit box for the brick.
+     * 
+     * @param pos Position of the brick.
+     * @param size Size of the brick.
+     * @return Returns the shape of the brick, rectangle.
+     */
     @Override
     protected Shape makeBrickFace(Point pos, Dimension size) {
         return new Rectangle(pos,size);
     }
 
+    
+    /** 
+     * Getter method to return the hit box of the brick.
+     * 
+     * @return Returns the shape of the brick, rectangle.
+     */
     @Override
     public Shape getBrick() {
         return super.brickFace;
