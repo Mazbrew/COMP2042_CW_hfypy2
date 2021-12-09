@@ -41,6 +41,9 @@ abstract public class Brick {
     /** 
      * Method that is defined in the brick super class but is overrided by all the brick types.
      * 
+     * @param pos Position of the brick.
+     * @param size Size of the brick.
+     * @return Returns the shape of the brick,rectangle.
      */
     protected abstract Shape makeBrickFace(Point pos,Dimension size);
 
@@ -63,6 +66,8 @@ abstract public class Brick {
 
     /**
      * Method that is defined in the brick super class but is overrided by all the brick types.
+     * 
+     * @return Returns the shape of the brick, rectangle.
      */
     public abstract Shape getBrick();
 

@@ -126,7 +126,6 @@ public class Player {
     /**
      * Setter method for the moveAmount.
      * 
-     * @return Returns the moveAmount.
      */
     public void setmoveAmount(int setter){
         moveAmount= setter;
