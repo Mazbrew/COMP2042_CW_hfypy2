@@ -3,6 +3,7 @@ com\game\views\HighscorePage.class
 com\game\wall\SteelBrick.class
 com\game\player\Player.class
 com\game\views\HomeMenu$4.class
+com\game\wall\SpeedBrick.class
 com\game\main\GraphicsMain.class
 com\game\views\InfoPage.class
 com\game\wall\CementBrick.class

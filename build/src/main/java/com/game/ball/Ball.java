@@ -22,6 +22,7 @@ public class Ball {
     public Point2D left;
     public Point2D right;
 
+
     private int speedX;
     private int speedY;
 
@@ -42,11 +43,7 @@ public class Ball {
         left = new Point2D.Double();
         right = new Point2D.Double();
 
-        up.setLocation(center.getX(),center.getY()-(DEF_RADIUS / 2));
-        down.setLocation(center.getX(),center.getY()+(DEF_RADIUS / 2));
-
-        left.setLocation(center.getX()-(DEF_RADIUS /2),center.getY());
-        right.setLocation(center.getX()+(DEF_RADIUS /2),center.getY());
+ 
 
 
         ballFace = makeBall(center,DEF_RADIUS);
@@ -92,12 +89,12 @@ public class Ball {
     public void setSpeed(){
         chance= rnd.nextBoolean();
 
-        speedX = rnd.nextInt(5 + 1 - 2) + 2;
+        speedX = rnd.nextInt(5 + 1 - 3) + 1;
         if(chance == true){
             reverseX();
         }
         
-        speedY = -(rnd.nextInt(5 + 1 - 2) + 2);
+        speedY = -(rnd.nextInt(5 + 1 - 3) + 3);
     }
 
     /**
@@ -105,7 +102,7 @@ public class Ball {
      */
     public void setRandomX(){
         chance = rnd.nextBoolean();
-        speedX = rnd.nextInt(5 + 1 - 2) + 2;
+        speedX = rnd.nextInt(5 + 1 - 3) + 1;
         if(chance == true){
             reverseX();
         }
@@ -116,7 +113,7 @@ public class Ball {
      */
     public void setRandomY(){
         chance = rnd.nextBoolean();
-        speedY = rnd.nextInt(5 + 1 - 2) + 2;
+        speedY = rnd.nextInt(5 + 1 - 3) + 3;
         if(chance == true){
             reverseY();
         }
@@ -250,5 +247,19 @@ public class Ball {
         return speedY;
     }
 
+    /**
+     * Setter method to increase the speeed of the ball
+     */
+    public void increaseSpeed(){
+        if(speedX<0)
+            speedX-=1;
+        else
+            speedX+=1;
+
+        if(speedY<0)
+            speedY-=1;
+        else
+            speedY+=1;
+    }
 
 }
