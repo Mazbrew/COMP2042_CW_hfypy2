@@ -3,9 +3,9 @@ package com.game.wall;
 import java.awt.*;
 import java.awt.Point;
 import java.awt.geom.Point2D;
-import javax.swing.JFrame;
 
 import com.game.ball.Ball;
+import com.game.views.GameFrame;
 
 /**
  * Class that acts as the super class for all of the brick types.
@@ -98,7 +98,7 @@ abstract public class Brick {
      * @param owner Instance of the GameFrame.
      * @return The point of impact on the brick.
      */
-    public int findBrickImpact(Ball b, JFrame owner){
+    public int findBrickImpact(Ball b, GameFrame owner){
         if(broken)
             return 0;
         int out  = 0;

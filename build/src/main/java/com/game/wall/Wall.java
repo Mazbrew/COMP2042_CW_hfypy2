@@ -2,11 +2,10 @@ package com.game.wall;
 
 import java.awt.*;
 
-import javax.swing.JFrame;
-
 import com.game.ball.Ball;
 import com.game.player.Player;
 import com.game.views.GameBoard;
+import com.game.views.GameFrame;
 
 /**
  * Class that handles all of the game logic.
@@ -39,9 +38,9 @@ public class Wall {
 
     private GameBoard gameboard;
 
-    private JFrame owner;
+    private GameFrame owner;
 
-    public Wall(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos, GameBoard gameboard,JFrame owner){
+    public Wall(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos, GameBoard gameboard,GameFrame owner){
 
         this.owner = owner;
 

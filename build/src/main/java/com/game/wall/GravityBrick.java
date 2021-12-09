@@ -4,9 +4,9 @@ import java.awt.*;
 import java.awt.Point;
 import java.util.Random;
 
-import javax.swing.JFrame;
 
 import com.game.ball.Ball;
+import com.game.views.GameFrame;
 
 /**
  * Child class of the super class Brick.
@@ -33,7 +33,7 @@ public class GravityBrick extends Brick {
      * @return Returns point of impact.
      */
     @Override
-    public int findBrickImpact(Ball b,JFrame owner){
+    public int findBrickImpact(Ball b,GameFrame owner){
         Random rnd = new Random();
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
         int screenwidth = (int) size.getWidth();

@@ -4,7 +4,9 @@ import javax.swing.*;
 
 import com.game.ball.Ball;
 import com.game.views.GameBoard;
+import com.game.views.GameFrame;
 import com.game.wall.Wall;
+
 
 import java.awt.*;
 import java.awt.event.WindowEvent;
@@ -18,13 +20,13 @@ public class DebugConsole extends JDialog implements WindowListener{
     private static final String TITLE = "Debug Console";
 
 
-    private JFrame owner;
+    private GameFrame owner;
     private DebugPanel debugPanel;
     private GameBoard gameBoard;
     private Wall wall;
 
 
-    public DebugConsole(JFrame owner,Wall wall,GameBoard gameBoard){
+    public DebugConsole(GameFrame owner,Wall wall,GameBoard gameBoard){
 
         this.wall = wall;
         this.owner = owner;
