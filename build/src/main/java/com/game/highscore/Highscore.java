@@ -121,6 +121,14 @@ public class Highscore{
     }
 
     /**
+     * Getter method to get the highest score.
+     * @return Returns the highest score.
+     */
+    public int gethighestScore(){
+        return scores[0];
+    }
+
+    /**
      * Setter method to set the scores aray.
      * @param scoreslist An array of scores.
      */
