@@ -597,9 +597,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             else
                 this.setCursor(Cursor.getDefaultCursor());
-        }
-        
-        if(showEndScreen) {
+        }else if(showEndScreen) {
             if (mainmenuButtonRect.contains(p) || exitButtonRect.contains(p) )
                 this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             else
