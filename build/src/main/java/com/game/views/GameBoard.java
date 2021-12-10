@@ -60,6 +60,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     private static boolean A_check;
     private static boolean D_check;
+    private static boolean gameHasStarted;
 
     private static int score;
     private static int resetScore;
@@ -72,6 +73,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         showPauseMenu = false;
         showEndScreen = false;
         stopReceivingInput = false;
+        gameHasStarted = false;
 
         highscore.readScores();
 
@@ -111,6 +113,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             else if(wall.isDone()){
                 if(wall.hasLevel()){
                     message = "Next Level, press [SPACE] to continue";
+                    gameHasStarted = false;
                     gameTimer.stop();
                     wall.ballReset();
                     wall.nextLevel();
@@ -420,13 +423,20 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 else{
                     showPauseMenu = !showPauseMenu;
                     repaint();
-                    gameTimer.start();
+                    if(gameHasStarted==true){
+                        gameTimer.start();
+                    }
+                    else{
+
+                    }
                 }
                 break;
             case KeyEvent.VK_SPACE:
                 if(!showPauseMenu){
-                    if(!gameTimer.isRunning() && !wall.isDone())
+                    if(!gameTimer.isRunning() && !wall.isDone()){
+                        gameHasStarted = true;
                         gameTimer.start();
+                    }
                 }
                 break;
             case KeyEvent.VK_F1:
@@ -496,6 +506,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             }
             else if(restartButtonRect.contains(p)){
                 message = "Restarting Level, Press [SPACE] to continue";
+                gameHasStarted = false;
                 wall.resetBallCount();
                 wall.ballReset();
                 wall.wallReset();
