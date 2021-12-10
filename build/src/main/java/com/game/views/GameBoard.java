@@ -129,6 +129,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 }
             }
 
+            if(owner.getGaming()==false){
+                onLostFocus();
+            }
             repaint();
         });
 

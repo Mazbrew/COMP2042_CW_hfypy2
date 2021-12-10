@@ -23,6 +23,8 @@ public class GameFrame extends JFrame implements WindowFocusListener {
     private static HighscorePage highscorepage;
     private static Highscore highscore;
 
+    private static boolean gaming;
+
     public GameFrame(){
         super();
         highscore = new Highscore();
@@ -31,6 +33,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         homeMenu = new HomeMenu(this);
         this.add(homeMenu);
         
+        gaming = true;
     }
 
     /**
@@ -129,7 +132,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
      */
     @Override
     public void windowGainedFocus(WindowEvent windowEvent) {
-
+        gaming = true;
     }
 
     
@@ -141,6 +144,15 @@ public class GameFrame extends JFrame implements WindowFocusListener {
      */
     @Override
     public void windowLostFocus(WindowEvent windowEvent) {
-        gameBoard.onLostFocus();
+        gaming = false;
     }
+
+    /**
+     * Getter method to check if the game is in focus.
+     * @return Returns the boolean gaming to check if the game is in focus.
+     */
+    public boolean getGaming(){
+        return gaming;
+    }
+
 }
