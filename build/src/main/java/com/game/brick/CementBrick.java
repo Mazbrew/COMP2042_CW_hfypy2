@@ -5,6 +5,7 @@ import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 
 
+
 /**
  * Child class of the super class Brick.
  * The cement brick is the only brick with a strength of 2.
@@ -69,7 +70,8 @@ public class CementBrick extends Brick {
      */
     public void repair(){
         super.repair();
-        crack.reset();
-        brickFace = super.brickFace;
+        this.crack = null;
+        this.crack = new Crack(this,DEF_CRACK_DEPTH,DEF_STEPS);;
+        
     }
 }

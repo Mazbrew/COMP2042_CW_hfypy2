@@ -23,9 +23,9 @@ abstract public class Brick {
     private Color inner;
 
     private int fullStrength;
-    private int strength;
+    protected int strength;
 
-    private boolean broken;
+    protected boolean broken;
 
 
     public Brick(String name, Point pos,Dimension size,Color border,Color inner,int strength){
