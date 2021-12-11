@@ -1,7 +1,8 @@
-## File directories
 - Javadocs : build/target/apidocs/*
 - Jar file : build/target/BrickDestroyer-1.1.jar
 - Junit tests : build/src/test/java/com/build
+- git hub : https://github.com/Mazbrew/COMP2042_CW_hfypy2
+
 ---
 
 ## A. Refactoring changes.

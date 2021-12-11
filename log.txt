@@ -1,0 +1,571 @@
+commit b77f012dee2629d246f953cca719efa228b07534
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sun Dec 12 01:07:08 2021 +0800
+
+    rebuild again ....
+
+commit 126dcfd5eaec31ec6e32f763042a370cae64c5c7
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sun Dec 12 01:06:36 2021 +0800
+
+    package renaming
+
+commit 21d3624069cafda3588fd37be25ea82ba4f37255
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sun Dec 12 01:03:01 2021 +0800
+
+    package renaming
+
+commit adc18df9b586d6389ec5ce8c951c50f736ae4641
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sun Dec 12 01:02:20 2021 +0800
+
+    readme file + final build
+
+commit cf378306ee3d41431e58cbed5b9abf15736cc755
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sun Dec 12 00:44:49 2021 +0800
+
+    readme + packacge renaming + rebuilt file
+
+commit 273785b840e35bd509d18b6a80cb06b0d0aa910b
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sat Dec 11 22:36:24 2021 +0800
+
+    added a brick easter egg
+
+commit 5c0f47732da99a1270e90863161c6e4cf95d5fb1
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sat Dec 11 21:29:51 2021 +0800
+
+    testing something
+
+commit c69c12380b42a5f70440811fc56ecfae165e9582
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sat Dec 11 18:39:37 2021 +0800
+
+    changed highscore a little
+
+commit 21677279d220319210b08423150326f5a9512cc8
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sat Dec 11 18:22:51 2021 +0800
+
+    added some javadocs and rebuilt the game
+
+commit 42c46c3f5c0a71801d34e6b7bee70c091e95e1c8
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sat Dec 11 18:10:39 2021 +0800
+
+    package renaming
+
+commit b355648fcb467cc2b02e417a64ddbb34ee0c5e15
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sat Dec 11 18:06:21 2021 +0800
+
+    finally did some mvc
+
+commit c12da245368ee2f7e8d9ab00f4baf7d28a4b81b8
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 20:11:49 2021 +0800
+
+    added the read me
+
+commit a6e3568ae0b9c65a079fa61e025967ceff57483f
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 11:52:59 2021 +0800
+
+    built the new file
+
+commit aa1f15616d5e51a83be1797b74cbbace9e392522
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 11:52:27 2021 +0800
+
+    another fix to the cursor
+
+commit 17f0d2817eed238d442ce029c9485362d035b128
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 11:45:10 2021 +0800
+
+    fixed the cursor problem
+
+commit 5afd8701dbaba6264f13c4d7ed6cc897ff5bf494
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 11:29:33 2021 +0800
+
+    fixed the esc button from starting the game
+
+commit 08828a29be091fcc85135593e2ffa0f05eb3ea56
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 11:22:48 2021 +0800
+
+    close button and alt+f4 disabled
+
+commit 1a15fad3c44737a31bf6b6c30d6d1e6e7f45b7d7
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 11:15:45 2021 +0800
+
+    added the HS indicator
+
+commit 4f4d7db8d67b18a7117b172a415a395a4b3883f8
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 06:57:00 2021 +0800
+
+    removed unused import
+
+commit 6bfcdde768127fe506376d03274479cb880dd57f
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 06:56:15 2021 +0800
+
+    speed brick level created
+
+commit d63ad027efc201e4f56e74f6508bb8df3f0bb357
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 06:32:53 2021 +0800
+
+    final rebuild(hopefully)
+
+commit 110d71e06852b51ef84937c12aa3732e2bde87ec
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 06:28:46 2021 +0800
+
+    rebuilt the build file
+
+commit 350793d58147ce4dcef1df14f314bdfe8fc173c1
+Merge: cdbfe5c 8914836
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 06:27:01 2021 +0800
+
+    merging again
+
+commit cdbfe5cfe50417e016b7596fefd6f06dbef5685b
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 06:23:35 2021 +0800
+
+    merging
+
+commit 89148362632b1b449b6964c311449846f08d676f
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 06:22:53 2021 +0800
+
+    fixes
+
+commit 82ecfac093ffdd65f96fb825a2eef871700d1063
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 06:06:11 2021 +0800
+
+    fixed some display issues in the gameboard
+
+commit 2a95d0a7662e66cc878db3bacabe90dfa8cbc3e7
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 01:21:02 2021 +0800
+
+    rebuilt the file
+
+commit 6cf5da5fd52657951fd3aaec1ff2d4c8bf6f9f6d
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 01:19:28 2021 +0800
+
+    made some changes to keep consistency within the code
+
+commit c6506b42b8435e8718f4ddb1dad715ae43d829c0
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 01:15:01 2021 +0800
+
+    fixed some of the player movement logic
+
+commit 3dbcbcc0587bf5c05759272accf066fbb8e650c1
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 01:14:32 2021 +0800
+
+    fixed some of the player movement logic
+
+commit f10f226b123584fcee8f18590918bb9cf940fb75
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 10 00:34:06 2021 +0800
+
+    made some test classes
+
+commit b22df7c53c592e282d4d59e9595c0e484e3d92dd
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Thu Dec 9 21:36:52 2021 +0800
+
+    updated target file
+
+commit 1a7855ef8dfdb2da2434cc3d5d740c1a8d183f4a
+Merge: 96f901f 33acb91
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Thu Dec 9 21:34:59 2021 +0800
+
+    fast forward merge
+
+commit 96f901fbf2693e33f354e1fb101502a588417439
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Thu Dec 9 21:33:15 2021 +0800
+
+    merging
+
+commit 33acb911c0fa6214eef0df8f6964598e5803ac04
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Thu Dec 9 21:30:41 2021 +0800
+
+    fixed up some of the javadocs
+
+commit e570a8caa76c38a2143eaf7ae109dc725c9003fc
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 8 21:38:42 2021 +0800
+
+    added javadocs for all the classes
+
+commit 3d6f8a18d6f1af3d60b284ff00ca18c556da1cb0
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 8 20:15:18 2021 +0800
+
+    added more javadocs
+
+commit c34c37caa8c00f4da51067052d5bc94de155ec61
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 8 17:47:40 2021 +0800
+
+    generated javadocs using maven
+
+commit 9b9675b901aa23dd223ec588f9679ffb1414a252
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 8 16:56:37 2021 +0800
+
+    correcting the previous commit
+
+commit df24c9ddf366d815ad8003c47e3847f1fbbbeb4a
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 8 16:54:31 2021 +0800
+
+    ball javadocs
+
+commit 1eadf2da7dde95b7c21330918cddbc544c40ca6a
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 8 15:18:48 2021 +0800
+
+    javadoccing for the ball
+
+commit d930ace8593e952b6ff3cef0e46beac1b760fe33
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 8 15:16:49 2021 +0800
+
+    fixed the display issue
+
+commit ca7642a9d285bd26eca5ba54c6d60db6dd55a783
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 8 15:02:34 2021 +0800
+
+    fixed minor bug with highscore
+
+commit e83edea9f57b2f7dfd31e653cb8da95188ea6800
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 8 14:41:02 2021 +0800
+
+    moved all the classes into packages
+
+commit 37764ce8f1c350d1026cd5ac689df240c1da6930
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 8 14:24:17 2021 +0800
+
+    improved encapsulation
+
+commit 995068e43953e55328e6426173a4a0192d6b32b9
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 8 14:03:27 2021 +0800
+
+    updated the build file
+
+commit aac7f26c24bc4f954cb6ffcf3a29f665e2cf30b7
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 8 13:56:30 2021 +0800
+
+    added some buttons to the end and main menu
+
+commit 9e85b3a80dfaf9041f7106516a497d493001602f
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 8 13:26:08 2021 +0800
+
+    cleaning up the drawing menu code
+
+commit 38dfb4091918db5f594e236bef43c6ade5363dce
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 8 12:39:13 2021 +0800
+
+    fixed a null exception when mouse clicked
+
+commit 882685960c62ef5e3d57ee64882befce1a38af89
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Tue Dec 7 16:36:27 2021 +0800
+
+    added the mainmenu button when the game ends
+
+commit 3822d9fcb125717052d8463a0ce524725c63639f
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Mon Dec 6 14:31:12 2021 +0800
+
+    fixed an issue with the final level  not running
+
+commit f5df88436c9d2c2e2cb7aa8e03dee13562293a59
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Mon Dec 6 14:11:09 2021 +0800
+
+    removed a sysout line in highscore
+
+commit 6d39615ce42375c3ce62b5e849b4cf750a7b0de2
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Mon Dec 6 12:51:19 2021 +0800
+
+    full fledged highscorepage done
+
+commit 391fff42e97d0f02ce5c51a3ccd945ef317c2196
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Mon Dec 6 12:14:05 2021 +0800
+
+    added highscores page
+
+commit 74db3244896df45ec3189e47af6ffa8309f67c15
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Mon Dec 6 11:32:02 2021 +0800
+
+    updated the assets
+
+commit ea81dd81632d964e9ee1f329acf2e909d5afe32c
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Mon Dec 6 11:16:51 2021 +0800
+
+    prevents the game from running when wall is complete
+
+commit 64915d46adceb3acf787d184ebff7a4c9d850f1f
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Mon Dec 6 11:08:41 2021 +0800
+
+    fixed ball resetting issue in debug panel
+
+commit ad20dda654a4061a0c6f9f2249f48b66f9348fdd
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Mon Dec 6 10:56:33 2021 +0800
+
+    score reset system added
+
+commit bf37e442ce5fabb134eb337e7e1c2167a66d7ab4
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Mon Dec 6 01:03:25 2021 +0800
+
+    new lvl added
+
+commit 1cabd9451fc2923cbd5112b956119c554c38ff90
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Mon Dec 6 00:58:04 2021 +0800
+
+    space brick added
+
+commit e06ed09b540818a01d22f17dfd59f757a19db5f6
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Mon Dec 6 00:22:02 2021 +0800
+
+    fixed the dispose
+
+commit e1caee3805b0e5ac358e4ddb732d0344d98739e2
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sun Dec 5 23:53:44 2021 +0800
+
+    added highscores(not displayed) n changed ballcount reset
+
+commit 1f92a374cfb108ad61b3c8bfc1d58205bc4d16ad
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sun Dec 5 16:57:13 2021 +0800
+
+    added file reading class
+
+commit 0cbc02c64d0b76a65c8733758e1de8ee691c9764
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sun Dec 5 16:02:34 2021 +0800
+
+    centered the text on gameboard
+
+commit 06c054408960bb2839fadddf3b2643b0e6169c9e
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sun Dec 5 15:28:41 2021 +0800
+
+    added arrow key movemnt
+
+commit 483bbb24726cff2684bbdbaa8c43fb2017632d2e
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sat Dec 4 22:30:12 2021 +0800
+
+    removed bgcolor in debug panel
+
+commit 6395acaf9a455b57f97cfa788b54813fe0660b61
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sat Dec 4 22:26:53 2021 +0800
+
+    fixed debugpanel error
+
+commit a1de91e9f8381611e60caf7d2d7424654dd8bece
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sat Dec 4 22:12:39 2021 +0800
+
+    gameframe location fixed
+
+commit 0cbdc55db4acdac5dbe9284a1e7c6384b159e365
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sat Dec 4 14:13:44 2021 +0800
+
+    removed unused imports
+
+commit 76045b1e369ec4ff4746144f327d3e49e671143a
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sat Dec 4 14:09:43 2021 +0800
+
+    removed makeball in wall
+
+commit a1a4063abb93de58b4259e2abaacb624b9afa13a
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 3 01:19:03 2021 +0800
+
+    moved images and fixed maven implementation
+
+commit f78dc0983ec4c4ec599aa3d1fa590a53945699d0
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Fri Dec 3 00:16:08 2021 +0800
+
+    made new level and brick type
+
+commit 5643698215b4d77c794cadde751b03484879e769
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Thu Dec 2 23:15:43 2021 +0800
+
+    fixed the makesingletypelevel, makes all the same brick
+
+commit 5938b98964ed62027b1c0665b6e13a717431a732
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Thu Dec 2 23:08:11 2021 +0800
+
+    pause timer only if showpausemenu becomes true
+
+commit 37cd665a5efba52ff84f1acad7531e74b47c754f
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Thu Dec 2 14:12:25 2021 +0800
+
+    cleaned up the code
+
+commit 7e8f676a75343e747cece32d5978b851086567aa
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Thu Dec 2 14:08:04 2021 +0800
+
+    added the bpcheck variable
+
+commit 19ca1c770ef9a90f89bf828747876694091db0d2
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Thu Dec 2 13:38:17 2021 +0800
+
+    removed the impact border method in wall
+
+commit f715e118fd32c901c90162e9705a26c06fb108ab
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Thu Dec 2 12:59:48 2021 +0800
+
+    fixed the 'continue' button
+
+commit bb6c1b68d67d3c2d3bb0130f150fb5498b7acc51
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 1 16:34:48 2021 +0800
+
+    testing maven build
+
+commit d62578dbedf40159791a970e5d923e9900fc8181
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 1 16:11:06 2021 +0800
+
+    fixed the player movement
+
+commit c5fd20748452df605dbea022e2e38d228c4d360a
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 1 15:50:00 2021 +0800
+
+    separated the crack class
+
+commit a340575af9bca4cae6ebd78a9a65262565a6faa4
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 1 14:38:09 2021 +0800
+
+    changed some colors
+
+commit b4b338aff93e465191bb5fe7cfdcd2c32d3e901a
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 1 14:24:21 2021 +0800
+
+    removed the rubberball class
+
+commit cdc1f48d0ecaf3571b7909aea77742b067354450
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Wed Dec 1 13:07:10 2021 +0800
+
+    removed random pausing
+
+commit 2f47c0cdfc659d1adea2907425b9bb7f1373ec85
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Tue Nov 30 16:40:24 2021 +0800
+
+    changed the colour of the player
+
+commit 46a2552f6f83c5f2a9f1e578bd1c3e3c6de5153c
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Tue Nov 30 16:19:12 2021 +0800
+
+    changed the package name to game
+
+commit 8a48b93da5ead0f70db5358d7e86d463f81ddc4f
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Tue Nov 30 15:27:43 2021 +0800
+
+    made the player movement smoother
+
+commit adb45bd5539d249a666abb00b5fa8a00f41fcfa5
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Tue Nov 30 13:41:59 2021 +0800
+
+    maven implementation (unfixed)
+
+commit e6de2d23da11e094eaee4fd61cc058510b7eaa22
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Mon Nov 22 17:38:45 2021 +0800
+
+    fixed up the issue where it closes the frame
+
+commit 12863cd5654b8efc517f2b7519862ce4cc676a53
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Mon Nov 22 16:09:12 2021 +0800
+
+    removed unused variables
+
+commit d451e8d89799ae4ff0507b0ae1aa94028edd8108
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Mon Nov 22 16:04:08 2021 +0800
+
+    added the info page
+
+commit 6946915ee6440b6d23213bd6ee0d9fcdfe094abb
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sun Nov 21 15:27:02 2021 +0800
+
+    made the home menu
+
+commit 2657fa3f41ac99389da38f4034f84f70d1a2334c
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sat Nov 20 15:55:23 2021 +0800
+
+    removed unnecesasry commenting and unused imports
+
+commit 724892d403e43e7a4206ba7451199ceb34099e42
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sat Nov 20 15:48:19 2021 +0800
+
+    added the brick game
+
+commit d78adbc54b4e14b8a9b16232298f63b230d77b85
+Author: mazbrew <peteryeoh50@gmail.com>
+Date:   Sat Nov 20 15:25:04 2021 +0800
+
+    first commit
