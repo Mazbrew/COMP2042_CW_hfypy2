@@ -1,4 +1,4 @@
-package com.game.Models.brick;
+package com.game.models.brick;
 
 import java.awt.*;
 import java.awt.Point;

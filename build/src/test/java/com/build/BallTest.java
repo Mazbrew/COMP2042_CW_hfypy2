@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.awt.*;
 import java.awt.geom.Point2D;
 
-import com.game.Models.ball.Ball;
+import com.game.models.ball.Ball;
 
 import org.junit.Test;
 

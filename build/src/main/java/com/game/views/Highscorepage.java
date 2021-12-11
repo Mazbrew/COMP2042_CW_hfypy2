@@ -3,7 +3,7 @@ package com.game.views;
 import javax.swing.*;
 import javax.swing.event.MouseInputListener;
 
-import com.game.Models.highscore.Highscore;
+import com.game.models.highscore.Highscore;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;

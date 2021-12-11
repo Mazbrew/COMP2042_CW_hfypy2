@@ -2,11 +2,11 @@ package com.game.views;
 
 import javax.swing.*;
 
-import com.game.Models.ball.Ball;
-import com.game.Models.brick.Brick;
-import com.game.Models.highscore.Highscore;
-import com.game.Models.player.Player;
 import com.game.controller.GameController;
+import com.game.models.ball.Ball;
+import com.game.models.brick.Brick;
+import com.game.models.highscore.Highscore;
+import com.game.models.player.Player;
 
 import java.awt.*;
 import java.awt.event.*;

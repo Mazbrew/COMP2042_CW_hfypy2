@@ -1,4 +1,4 @@
-package com.game.Models.highscore;
+package com.game.models.highscore;
 
 import java.io.File;
 import java.io.FileNotFoundException;

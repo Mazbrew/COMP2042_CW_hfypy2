@@ -12,14 +12,14 @@ import java.awt.event.ActionListener;
  *  <p>
  *  Said panel is added to the DebugConsole JDialog.
  */
-public class DebugPanel extends JPanel {
+public class DebugController extends JPanel {
     private JButton skipLevel;
     private JButton resetBalls;
 
     private JSlider ballXSpeed;
     private JSlider ballYSpeed;
 
-    public DebugPanel(GameController gamecontroller){
+    public DebugController(GameController gamecontroller){
 
         this.setLayout(new GridLayout(2,2));
 

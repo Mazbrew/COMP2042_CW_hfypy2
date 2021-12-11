@@ -4,10 +4,10 @@ import java.awt.*;
 
 import javax.swing.Timer;
 
-import com.game.Models.ball.Ball;
-import com.game.Models.brick.*;
-import com.game.Models.highscore.Highscore;
-import com.game.Models.player.Player;
+import com.game.models.ball.Ball;
+import com.game.models.brick.*;
+import com.game.models.highscore.Highscore;
+import com.game.models.player.Player;
 import com.game.views.*;
 
 

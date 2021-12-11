@@ -1,8 +1,8 @@
-package com.game.Models.player;
+package com.game.models.player;
 
 import java.awt.*;
 
-import com.game.Models.ball.Ball;
+import com.game.models.ball.Ball;
 
 /**
  * Class that contains all the logic and the properties of the player (i.e. paddle).

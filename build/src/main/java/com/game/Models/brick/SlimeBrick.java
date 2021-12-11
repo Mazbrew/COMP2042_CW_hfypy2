@@ -1,8 +1,8 @@
-package com.game.Models.brick;
+package com.game.models.brick;
 import java.awt.*;
 import java.awt.Point;
 
-import com.game.Models.ball.Ball;
+import com.game.models.ball.Ball;
 import com.game.views.GameFrame;
 
 /**
