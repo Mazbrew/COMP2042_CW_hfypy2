@@ -542,18 +542,39 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         repaint();
     }
 
+    /**
+     * Setter method to set the message displayed on the screen.
+     * 
+     * @param setMessage String that is to be displayed on the screen.
+     */
     public void setMessage(String setMessage){
         message = setMessage;
     }
 
+    /**
+     * Setter method to set the value of the showEndScreen boolean.
+     * 
+     * @param value Boolean value that is to be assigned to the showEndScreen variable.
+     */
     public void setshowEndScreen(boolean value){
         showEndScreen=value;
     }
 
 
+    /**
+     * Setter method to set the value of the stopReceiving Input boolean.
+     * 
+     * @param value Boolean value that is to be assigned to the stopReceiving variable.
+     */
     public void setstopReceivingInput(boolean value){
         stopReceivingInput = value;
     }
+
+    /**
+     * Setter method to set the value of the gameHasStarted boolean.
+     * 
+     * @param value Boolean value that is to be assigned to the gameHasStarted variable.
+     */
     public void setgameHasStarted(boolean value){
         gameHasStarted= value;
     }

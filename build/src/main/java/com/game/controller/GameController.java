@@ -446,22 +446,43 @@ public class GameController {
         ballCount = 3;
     }
 
+    /**
+     * Method to start the gameTimer
+     */
     public void start(){
         gameTimer.start();
     }
 
+    /**
+     * Method to start the gameTimer
+     */
     public void stop(){
         gameTimer.stop();
     }
 
+    /**
+     * Getter method that returns a boolean on whether or not the game is running
+     * 
+     * @return Returns a boolean on whether or not the game is running
+     */
     public boolean getisRunning(){
         return gameTimer.isRunning();
     }
 
+    /**
+     * Getter method which returns the current score
+     * 
+     * @return Returns the current score
+     */
     public int getScore(){
         return score;
     }
 
+    /**
+     * Setter method to set the score
+     * 
+     * @param value Score that you want to set
+     */
     public void setScore(int value){
         score=value;
     }
