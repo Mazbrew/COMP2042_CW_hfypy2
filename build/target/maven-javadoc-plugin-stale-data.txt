@@ -29,25 +29,25 @@
 'BrickDestroyer 1.1 API'
 com.game.controller
 com.game.main
-com.game.Models.ball
-com.game.Models.brick
-com.game.Models.highscore
-com.game.Models.player
+com.game.models.ball
+com.game.models.brick
+com.game.models.highscore
+com.game.models.player
 com.game.views
-'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/controller/DebugPanel.java'
+'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/controller/DebugController.java'
 'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/controller/GameController.java'
 'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/main/GraphicsMain.java'
-'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/Models/ball/Ball.java'
-'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/Models/brick/Brick.java'
-'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/Models/brick/CementBrick.java'
-'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/Models/brick/ClayBrick.java'
-'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/Models/brick/Crack.java'
-'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/Models/brick/GravityBrick.java'
-'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/Models/brick/SlimeBrick.java'
-'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/Models/brick/SpeedBrick.java'
-'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/Models/brick/SteelBrick.java'
-'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/Models/highscore/Highscore.java'
-'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/Models/player/Player.java'
+'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/models/ball/Ball.java'
+'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/models/brick/Brick.java'
+'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/models/brick/CementBrick.java'
+'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/models/brick/ClayBrick.java'
+'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/models/brick/Crack.java'
+'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/models/brick/GravityBrick.java'
+'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/models/brick/SlimeBrick.java'
+'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/models/brick/SpeedBrick.java'
+'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/models/brick/SteelBrick.java'
+'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/models/highscore/Highscore.java'
+'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/models/player/Player.java'
 'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/views/DebugConsole.java'
 'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/views/GameBoard.java'
 'c:/Users/USER/Documents/java/YEOH_PE-TER_VSCODE_11/build/src/main/java/com/game/views/GameFrame.java'
@@ -121,25 +121,25 @@ C:\Users\USER\.m2\repository\org\codehaus\plexus\plexus-utils\3.3.0\plexus-utils
 C:\Users\USER\.m2\repository\commons-io\commons-io\2.8.0\commons-io-2.8.0.jar = 1638955865645
 C:\Users\USER\.m2\repository\org\codehaus\plexus\plexus-interactivity-api\1.0\plexus-interactivity-api-1.0.jar = 1638955865769
 c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\src\main\java = 1638946880752
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\generated-sources\annotations = 1639242093096
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\allclasses-index.html = 1639242098410
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\allclasses.html = 1639242098418
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\allpackages-index.html = 1639242098412
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\constant-values.html = 1639242098299
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\deprecated-list.html = 1639242098416
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\element-list = 1639242098257
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\help-doc.html = 1639242098426
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\index-all.html = 1639242098405
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\index.html = 1639242098422
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\member-search-index.js = 1639242098402
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\member-search-index.zip = 1639242098403
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\overview-summary.html = 1639242098423
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\overview-tree.html = 1639242098375
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\package-search-index.js = 1639242098397
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\package-search-index.zip = 1639242098399
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\script.js = 1639242098429
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\search.js = 1639242098431
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\serialized-form.html = 1639242098308
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\stylesheet.css = 1639242098428
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\type-search-index.js = 1639242098400
-c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\type-search-index.zip = 1639242098401
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\generated-sources\annotations = 1639242407227
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\allclasses-index.html = 1639242412323
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\allclasses.html = 1639242412331
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\allpackages-index.html = 1639242412326
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\constant-values.html = 1639242412197
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\deprecated-list.html = 1639242412329
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\element-list = 1639242412154
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\help-doc.html = 1639242412339
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\index-all.html = 1639242412318
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\index.html = 1639242412335
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\member-search-index.js = 1639242412314
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\member-search-index.zip = 1639242412315
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\overview-summary.html = 1639242412337
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\overview-tree.html = 1639242412288
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\package-search-index.js = 1639242412309
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\package-search-index.zip = 1639242412311
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\script.js = 1639242412343
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\search.js = 1639242412345
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\serialized-form.html = 1639242412206
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\stylesheet.css = 1639242412342
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\type-search-index.js = 1639242412312
+c:\Users\USER\Documents\java\YEOH_PE-TER_VSCODE_11\build\target\apidocs\type-search-index.zip = 1639242412313

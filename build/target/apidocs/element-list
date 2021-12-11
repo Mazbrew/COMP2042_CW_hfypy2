@@ -1,7 +1,7 @@
 com.game.controller
 com.game.main
-com.game.Models.ball
-com.game.Models.brick
-com.game.Models.highscore
-com.game.Models.player
+com.game.models.ball
+com.game.models.brick
+com.game.models.highscore
+com.game.models.player
 com.game.views
