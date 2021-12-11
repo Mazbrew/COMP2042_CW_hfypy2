@@ -6,7 +6,6 @@ import javax.swing.Timer;
 
 import com.game.ball.Ball;
 import com.game.brick.*;
-import com.game.debug.DebugConsole;
 import com.game.highscore.Highscore;
 import com.game.player.Player;
 import com.game.views.*;
@@ -54,7 +53,7 @@ public class GameController {
 
     
 
-    public GameController(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos, GameBoard gameboard,GameFrame owner, Highscore highscore, DebugConsole debugConsole){
+    public GameController(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos, GameBoard gameboard,GameFrame owner, Highscore highscore){
         score = 0;
         highscore.readScores();
         

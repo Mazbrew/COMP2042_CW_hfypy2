@@ -7,6 +7,9 @@ import java.awt.geom.Point2D;
 
 /**
  * Child class of the super class Brick.
+ * The cement brick is the only brick with a strength of 2.
+ * Upon impact, a crack (line) is drawn across the face of the brick.
+ * 
  */
 public class CementBrick extends Brick {
     public static final int MIN_CRACK = 1;
@@ -20,28 +23,12 @@ public class CementBrick extends Brick {
     private static final int CEMENT_STRENGTH = 2;
 
     private Crack crack;
-    private Shape brickFace;
 
 
     public CementBrick(Point point, Dimension size){
         super(NAME,point,size,DEF_BORDER,DEF_INNER,CEMENT_STRENGTH);
         crack = new Crack(this,DEF_CRACK_DEPTH,DEF_STEPS);
-        brickFace = super.brickFace;
     }
-
-    
-    /** 
-     * Makes the hti box for the brick.
-     * 
-     * @param pos Position of the brick.
-     * @param size Size of the brick.
-     * @return Returns the shape of the brick, rectangle.
-     */
-    @Override
-    protected Shape makeBrickFace(Point pos, Dimension size) {
-        return new Rectangle(pos,size);
-    }
-
     
     /** 
      * Overrides the setImpact method to use the ball's point of impact and as well as 
@@ -64,17 +51,6 @@ public class CementBrick extends Brick {
         return true;
     }
 
-
-    
-    /** 
-     * Getter method to return the hit box of the brick.
-     * 
-     * @return Returns the shape of the brick, rectangle.
-     */
-    @Override
-    public Shape getBrick() {
-        return brickFace;
-    }
 
     /**
      * Method that updates the brick with a crack if it has impacted with a ball.

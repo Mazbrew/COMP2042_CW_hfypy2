@@ -10,6 +10,8 @@ import com.game.views.GameFrame;
 
 /**
  * Child class of the super class Brick.
+ * Upon impact, the GameFrame's position will be randomized.
+ * 
  */
 public class GravityBrick extends Brick {
 
@@ -60,29 +62,6 @@ public class GravityBrick extends Brick {
         return out;
     }
 
-    
-    /** 
-     * Method that makes the hit box for the brick.
-     * 
-     * @param pos Position of the brick.
-     * @param size Size of the brick.
-     * @return Returns the shape of the brick, rectangle.
-     */
-    @Override
-    protected Shape makeBrickFace(Point pos, Dimension size) {
-        return new Rectangle(pos,size);
-    }
-
-    
-    /** 
-     * Getter method to return the hit box of the brick.
-     * 
-     * @return Returns the shape of the brick, rectangle.
-     */
-    @Override
-    public Shape getBrick() {
-        return super.brickFace;
-    }
 
 
 }

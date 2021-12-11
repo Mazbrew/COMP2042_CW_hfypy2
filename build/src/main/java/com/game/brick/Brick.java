@@ -9,7 +9,7 @@ import com.game.views.GameFrame;
 
 /**
  * Class that acts as the super class for all of the brick types.
- * Contains all of the logic of the brick.
+ * Contains all of the logic of the brick object.
  */
 abstract public class Brick {
     public static final int UP_IMPACT = 100;    
@@ -39,13 +39,15 @@ abstract public class Brick {
 
     
     /** 
-     * Method that is defined in the brick super class but is overrided by all the brick types.
+     * Method that is creates the shape of the brick.
      * 
      * @param pos Position of the brick.
      * @param size Size of the brick.
      * @return Returns the shape of the brick,rectangle.
      */
-    protected abstract Shape makeBrickFace(Point pos,Dimension size);
+    protected Shape makeBrickFace(Point pos,Dimension size){
+        return new Rectangle(pos,size);
+    }
 
     
     /** 
@@ -64,12 +66,14 @@ abstract public class Brick {
         return  broken;
     }
 
-    /**
-     * Method that is defined in the brick super class but is overrided by all the brick types.
+    /** 
+     * Getter method to return the hit box of the brick.
      * 
      * @return Returns the shape of the brick, rectangle.
      */
-    public abstract Shape getBrick();
+    public Shape getBrick(){
+        return brickFace;
+    }
 
 
 

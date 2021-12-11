@@ -8,7 +8,7 @@ import java.util.Random;
 
 
 /**
- * The ball class contains all of the logic and the properties of the ball.
+ * The ball class contains all of the logic and the properties of the ball object.
  * 
  */
 public class Ball {
@@ -131,7 +131,7 @@ public class Ball {
 
     
     /** 
-     * This setter method is used to by the debug panel to directly change the X axis speed of the ball.
+     * This setter method is used to by the debug panel to directly change the Y axis speed of the ball.
      * 
      * @param s Specific Y axis speed of the ball.
      */
@@ -214,7 +214,7 @@ public class Ball {
 
     
     /** 
-     * Method that sets the position of the collision areas of the ball.
+     * Method that sets the position of the collision points of the ball.
      * 
      * @param width Width of the ball.
      * @param height Height of the ball.
@@ -229,7 +229,7 @@ public class Ball {
 
     
     /** 
-     * Getter method to return the X axis speed of the ball
+     * Getter method to return the X axis speed of the ball.
      * 
      * @return The X axis speed of the ball.
      */
@@ -239,7 +239,7 @@ public class Ball {
 
     
     /** 
-     * Getter method to return the Y axis speed of the ball
+     * Getter method to return the Y axis speed of the ball.
      * 
      * @return The Y axis speed of the ball.
      */
@@ -248,7 +248,7 @@ public class Ball {
     }
 
     /**
-     * Setter method to increase the speeed of the ball
+     * Setter method to increase the speeed of the ball.
      */
     public void increaseSpeed(){
         if(speedX<0)

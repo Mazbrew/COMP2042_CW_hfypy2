@@ -7,6 +7,8 @@ import com.game.views.GameFrame;
 
 /**
  * Child class of the super class Brick.
+ * Upon impact, based on the direction of impact, either the X or Y axis speed of the ball will be randomized.
+ * 
  */
 public class SlimeBrick extends Brick{
 
@@ -53,30 +55,4 @@ public class SlimeBrick extends Brick{
         }
         return out;
     }
-    
-
-    
-    /** 
-     * Method that makes the hit box for the brick.
-     * 
-     * @param pos Position of the brick.
-     * @param size Size of the brick.
-     * @return Returns the shape of the brick, rectangle.
-     */
-    @Override
-    protected Shape makeBrickFace(Point pos, Dimension size) {
-        return new Rectangle(pos,size);
-    }
-
-    
-     /** 
-     * Getter method to return the hit box of the brick.
-     * 
-     * @return Returns the shape of the brick, rectangle.
-     */
-    @Override
-    public Shape getBrick() {
-        return super.brickFace;
-    }
-
 }

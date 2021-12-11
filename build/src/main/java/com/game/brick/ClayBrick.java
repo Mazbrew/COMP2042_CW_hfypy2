@@ -5,6 +5,7 @@ import java.awt.Point;
 
 /**
  * Child class of the super class Brick.
+ * The most basic brick, breaks upon impact.
  */
 public class ClayBrick extends Brick {
 
@@ -16,30 +17,4 @@ public class ClayBrick extends Brick {
     public ClayBrick(Point point, Dimension size){
         super(NAME,point,size,DEF_BORDER,DEF_INNER,CLAY_STRENGTH);
     }
-
-    
-    /** 
-     * Makes the hit box for the brick.
-     * 
-     * @param pos Position of the brick.
-     * @param size Size of the brick.
-     * @return Returns the shape of the brick, rectangle.
-     */
-    @Override
-    protected Shape makeBrickFace(Point pos, Dimension size) {
-        return new Rectangle(pos,size);
-    }
-
-    
-    /** 
-     * Getter method to return the hit box of the brick.
-     * 
-     * @return Returns the shape of the brick, rectangle.
-     */
-    @Override
-    public Shape getBrick() {
-        return super.brickFace;
-    }
-
-
 }
