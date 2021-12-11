@@ -1,9 +1,6 @@
-package com.game.wall;
-
+package com.game.brick;
 import java.awt.*;
 import java.awt.Point;
-import java.util.Random;
-
 
 import com.game.ball.Ball;
 import com.game.views.GameFrame;
@@ -11,22 +8,22 @@ import com.game.views.GameFrame;
 /**
  * Child class of the super class Brick.
  */
-public class GravityBrick extends Brick {
+public class SpeedBrick extends Brick{
 
-    private static final String NAME = "Gravity Brick";
-    private static final Color DEF_INNER =  Color.BLACK;
-    private static final Color DEF_BORDER = Color.BLACK;
-    private static final int GRAVITY_STRENGTH = 1;
+    private static final String NAME = "Speed Brick";
+    private static final Color DEF_INNER = new Color(255, 000, 000).darker();
+    private static final Color DEF_BORDER = new Color(255, 000, 000);
+    private static final int SPEED_STRENGTH = 1;
 
-    public GravityBrick(Point point, Dimension size){
-        super(NAME,point,size,DEF_BORDER,DEF_INNER,GRAVITY_STRENGTH);
+    public SpeedBrick(Point point, Dimension size){
+        super(NAME,point,size,DEF_BORDER,DEF_INNER,SPEED_STRENGTH);
+        
     }
 
     
     /** 
      * Override of the findBrickImpact method within the super class.
-     * Whenever a impact is detected, the owner will be moved to a new random location on the screen.
-     * Logic to prevent the gameboard from being covered was added.
+     * Whenever a impact is detected, the ball's move speed will be increased.
      * 
      * @param b Instance of the ball class.
      * @param owner Instance of the Gameframe.
@@ -34,31 +31,28 @@ public class GravityBrick extends Brick {
      */
     @Override
     public int findBrickImpact(Ball b,GameFrame owner){
-        Random rnd = new Random();
-        Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
-        int screenwidth = (int) size.getWidth();
-        int screenheight = (int) size.getHeight();
         if(super.getBroken())
             return 0;
         int out  = 0;
         if(brickFace.contains(b.right)){
-            owner.setLocation(rnd.nextInt(screenwidth-owner.getWidth()+1),rnd.nextInt(screenheight-owner.getHeight()+1));
+            b.increaseSpeed();
             out = LEFT_IMPACT;  
         } 
         else if(brickFace.contains(b.left)){
-            owner.setLocation(rnd.nextInt(screenwidth-owner.getWidth()+1),rnd.nextInt(screenheight-owner.getHeight()+1));
+            b.increaseSpeed();
             out = RIGHT_IMPACT;
         }
         else if(brickFace.contains(b.up)){
-            owner.setLocation(rnd.nextInt(screenwidth-owner.getWidth()+1),rnd.nextInt(screenheight-owner.getHeight()+1));
+            b.increaseSpeed();
             out = DOWN_IMPACT;
         }
         else if(brickFace.contains(b.down)){
-            owner.setLocation(rnd.nextInt(screenwidth-owner.getWidth()+1),rnd.nextInt(screenheight-owner.getHeight()+1));
+            b.increaseSpeed();
             out = UP_IMPACT;
         }
         return out;
     }
+    
 
     
     /** 
@@ -74,7 +68,7 @@ public class GravityBrick extends Brick {
     }
 
     
-    /** 
+     /** 
      * Getter method to return the hit box of the brick.
      * 
      * @return Returns the shape of the brick, rectangle.
@@ -83,6 +77,5 @@ public class GravityBrick extends Brick {
     public Shape getBrick() {
         return super.brickFace;
     }
-
 
 }

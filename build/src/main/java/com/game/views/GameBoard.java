@@ -3,11 +3,11 @@ package com.game.views;
 import javax.swing.*;
 
 import com.game.ball.Ball;
+import com.game.brick.Brick;
 import com.game.controller.GameController;
 import com.game.debug.DebugConsole;
 import com.game.highscore.Highscore;
 import com.game.player.Player;
-import com.game.wall.Brick;
 
 import java.awt.*;
 import java.awt.event.*;

@@ -1,6 +1,9 @@
-package com.game.wall;
+package com.game.brick;
+
 import java.awt.*;
 import java.awt.Point;
+import java.util.Random;
+
 
 import com.game.ball.Ball;
 import com.game.views.GameFrame;
@@ -8,23 +11,22 @@ import com.game.views.GameFrame;
 /**
  * Child class of the super class Brick.
  */
-public class SlimeBrick extends Brick{
+public class GravityBrick extends Brick {
 
-    private static final String NAME = "Slime Brick";
-    private static final Color DEF_INNER = new Color(0, 255, 000).darker();
-    private static final Color DEF_BORDER = new Color(0, 255, 000);
-    private static final int SLIME_STRENGTH = 1;
+    private static final String NAME = "Gravity Brick";
+    private static final Color DEF_INNER =  Color.BLACK;
+    private static final Color DEF_BORDER = Color.BLACK;
+    private static final int GRAVITY_STRENGTH = 1;
 
-    public SlimeBrick(Point point, Dimension size){
-        super(NAME,point,size,DEF_BORDER,DEF_INNER,SLIME_STRENGTH);
-        
+    public GravityBrick(Point point, Dimension size){
+        super(NAME,point,size,DEF_BORDER,DEF_INNER,GRAVITY_STRENGTH);
     }
 
     
     /** 
      * Override of the findBrickImpact method within the super class.
-     * Whenever a impact is detected, the ball's move speed will be randomized depending on the point
-     * of impact on the wall.
+     * Whenever a impact is detected, the owner will be moved to a new random location on the screen.
+     * Logic to prevent the gameboard from being covered was added.
      * 
      * @param b Instance of the ball class.
      * @param owner Instance of the Gameframe.
@@ -32,28 +34,31 @@ public class SlimeBrick extends Brick{
      */
     @Override
     public int findBrickImpact(Ball b,GameFrame owner){
+        Random rnd = new Random();
+        Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenwidth = (int) size.getWidth();
+        int screenheight = (int) size.getHeight();
         if(super.getBroken())
             return 0;
         int out  = 0;
         if(brickFace.contains(b.right)){
-            b.setRandomY();
+            owner.setLocation(rnd.nextInt(screenwidth-owner.getWidth()+1),rnd.nextInt(screenheight-owner.getHeight()+1));
             out = LEFT_IMPACT;  
         } 
         else if(brickFace.contains(b.left)){
-            b.setRandomY();
+            owner.setLocation(rnd.nextInt(screenwidth-owner.getWidth()+1),rnd.nextInt(screenheight-owner.getHeight()+1));
             out = RIGHT_IMPACT;
         }
         else if(brickFace.contains(b.up)){
-            b.setRandomX();
+            owner.setLocation(rnd.nextInt(screenwidth-owner.getWidth()+1),rnd.nextInt(screenheight-owner.getHeight()+1));
             out = DOWN_IMPACT;
         }
         else if(brickFace.contains(b.down)){
-            b.setRandomX();
+            owner.setLocation(rnd.nextInt(screenwidth-owner.getWidth()+1),rnd.nextInt(screenheight-owner.getHeight()+1));
             out = UP_IMPACT;
         }
         return out;
     }
-    
 
     
     /** 
@@ -69,7 +74,7 @@ public class SlimeBrick extends Brick{
     }
 
     
-     /** 
+    /** 
      * Getter method to return the hit box of the brick.
      * 
      * @return Returns the shape of the brick, rectangle.
@@ -78,5 +83,6 @@ public class SlimeBrick extends Brick{
     public Shape getBrick() {
         return super.brickFace;
     }
+
 
 }

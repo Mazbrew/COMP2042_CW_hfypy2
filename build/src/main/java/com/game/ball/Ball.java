@@ -229,7 +229,7 @@ public class Ball {
 
     
     /** 
-     * Getter method to return the X axis speed of the wall
+     * Getter method to return the X axis speed of the ball
      * 
      * @return The X axis speed of the ball.
      */
@@ -239,7 +239,7 @@ public class Ball {
 
     
     /** 
-     * Getter method to return the Y axis speed of the wall
+     * Getter method to return the Y axis speed of the ball
      * 
      * @return The Y axis speed of the ball.
      */

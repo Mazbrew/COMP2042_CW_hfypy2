@@ -5,11 +5,11 @@ import java.awt.*;
 import javax.swing.Timer;
 
 import com.game.ball.Ball;
+import com.game.brick.*;
 import com.game.debug.DebugConsole;
 import com.game.highscore.Highscore;
 import com.game.player.Player;
 import com.game.views.*;
-import com.game.wall.*;
 
 
 /**

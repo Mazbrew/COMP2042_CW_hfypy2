@@ -1,4 +1,4 @@
-package com.game.wall;
+package com.game.brick;
 import java.awt.*;
 import java.awt.Point;
 
@@ -8,15 +8,15 @@ import com.game.views.GameFrame;
 /**
  * Child class of the super class Brick.
  */
-public class SpeedBrick extends Brick{
+public class SlimeBrick extends Brick{
 
-    private static final String NAME = "Speed Brick";
-    private static final Color DEF_INNER = new Color(255, 000, 000).darker();
-    private static final Color DEF_BORDER = new Color(255, 000, 000);
-    private static final int SPEED_STRENGTH = 1;
+    private static final String NAME = "Slime Brick";
+    private static final Color DEF_INNER = new Color(0, 255, 000).darker();
+    private static final Color DEF_BORDER = new Color(0, 255, 000);
+    private static final int SLIME_STRENGTH = 1;
 
-    public SpeedBrick(Point point, Dimension size){
-        super(NAME,point,size,DEF_BORDER,DEF_INNER,SPEED_STRENGTH);
+    public SlimeBrick(Point point, Dimension size){
+        super(NAME,point,size,DEF_BORDER,DEF_INNER,SLIME_STRENGTH);
         
     }
 
@@ -24,7 +24,7 @@ public class SpeedBrick extends Brick{
     /** 
      * Override of the findBrickImpact method within the super class.
      * Whenever a impact is detected, the ball's move speed will be randomized depending on the point
-     * of impact on the wall.
+     * of impact on the brick.
      * 
      * @param b Instance of the ball class.
      * @param owner Instance of the Gameframe.
@@ -36,19 +36,19 @@ public class SpeedBrick extends Brick{
             return 0;
         int out  = 0;
         if(brickFace.contains(b.right)){
-            b.increaseSpeed();
+            b.setRandomY();
             out = LEFT_IMPACT;  
         } 
         else if(brickFace.contains(b.left)){
-            b.increaseSpeed();
+            b.setRandomY();
             out = RIGHT_IMPACT;
         }
         else if(brickFace.contains(b.up)){
-            b.increaseSpeed();
+            b.setRandomX();
             out = DOWN_IMPACT;
         }
         else if(brickFace.contains(b.down)){
-            b.increaseSpeed();
+            b.setRandomX();
             out = UP_IMPACT;
         }
         return out;

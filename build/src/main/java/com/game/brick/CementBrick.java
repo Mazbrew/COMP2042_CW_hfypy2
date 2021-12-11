@@ -1,4 +1,4 @@
-package com.game.wall;
+package com.game.brick;
 
 import java.awt.*;
 import java.awt.geom.GeneralPath;
