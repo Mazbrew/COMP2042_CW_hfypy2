@@ -1,4 +1,5 @@
 com.game.ball
+com.game.controller
 com.game.debug
 com.game.highscore
 com.game.main

@@ -1,4 +1,3 @@
-com\game\wall\Wall.class
 com\game\views\HighscorePage.class
 com\game\wall\SteelBrick.class
 com\game\player\Player.class
@@ -18,6 +17,7 @@ com\game\views\HomeMenu.class
 com\game\wall\GravityBrick.class
 com\game\views\GameBoard.class
 com\game\wall\Brick.class
+com\game\controller\GameController.class
 com\game\views\InfoPage$1.class
 com\game\views\HighscorePage$1.class
 com\game\wall\SlimeBrick.class

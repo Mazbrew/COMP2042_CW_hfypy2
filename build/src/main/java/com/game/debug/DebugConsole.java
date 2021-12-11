@@ -3,10 +3,9 @@ package com.game.debug;
 import javax.swing.*;
 
 import com.game.ball.Ball;
+import com.game.controller.GameController;
 import com.game.views.GameBoard;
 import com.game.views.GameFrame;
-import com.game.wall.Wall;
-
 
 import java.awt.*;
 import java.awt.event.WindowEvent;
@@ -23,10 +22,10 @@ public class DebugConsole extends JDialog implements WindowListener{
     private GameFrame owner;
     private DebugPanel debugPanel;
     private GameBoard gameBoard;
-    private Wall wall;
+    private GameController wall;
 
 
-    public DebugConsole(GameFrame owner,Wall wall,GameBoard gameBoard){
+    public DebugConsole(GameFrame owner,GameController wall,GameBoard gameBoard){
 
         this.wall = wall;
         this.owner = owner;
@@ -125,7 +124,6 @@ public class DebugConsole extends JDialog implements WindowListener{
         debugPanel.setValues(b.getSpeedX(),b.getSpeedY());
     }
 
-    
     /** 
      * Unused interface
      * 

@@ -3,7 +3,7 @@ package com.game.debug;
 import javax.swing.*;
 import javax.swing.event.ChangeListener;
 
-import com.game.wall.Wall;
+import com.game.controller.GameController;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -21,7 +21,7 @@ public class DebugPanel extends JPanel {
     private JSlider ballXSpeed;
     private JSlider ballYSpeed;
 
-    public DebugPanel(Wall wall){
+    public DebugPanel(GameController wall){
 
         this.setLayout(new GridLayout(2,2));
 

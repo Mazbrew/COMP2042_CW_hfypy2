@@ -1,16 +1,21 @@
-package com.game.wall;
+package com.game.controller;
 
 import java.awt.*;
 
+import javax.swing.Timer;
+
 import com.game.ball.Ball;
+import com.game.debug.DebugConsole;
+import com.game.highscore.Highscore;
 import com.game.player.Player;
-import com.game.views.GameBoard;
-import com.game.views.GameFrame;
+import com.game.views.*;
+import com.game.wall.*;
+
 
 /**
  * Class that handles all of the game logic.
  */
-public class Wall {
+public class GameController {
 
     private static final int LEVELS_COUNT = 9;
 
@@ -27,6 +32,8 @@ public class Wall {
 
     private Rectangle area;
 
+    private Timer gameTimer;
+
     public Brick[] bricks;
     public Ball ball;
     public Player player;
@@ -39,16 +46,20 @@ public class Wall {
     private int ballCount;
     private boolean ballLost;
 
-    private GameBoard gameboard;
 
     private GameFrame owner;
 
-    public Wall(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos, GameBoard gameboard,GameFrame owner){
+    private static int score;
+    private static int resetScore;
 
+    
+
+    public GameController(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos, GameBoard gameboard,GameFrame owner, Highscore highscore, DebugConsole debugConsole){
+        score = 0;
+        highscore.readScores();
+        
         this.owner = owner;
-
         this.startPoint = new Point(ballPos);
-        this.gameboard = gameboard;
 
         levels = makeLevels(drawArea,brickCount,lineCount,brickDimensionRatio);
         level = 0;
@@ -63,6 +74,51 @@ public class Wall {
         player = new Player((Point) ballPos.clone(),150,10, drawArea);
 
         area = drawArea;
+
+        nextLevel();    
+        gameTimer = new Timer(1,e ->{
+            move();
+            findImpacts();
+            if(score > highscore.gethighestScore()){
+                gameboard.setMessage(String.format("Bricks: %d     Balls: %d     Score: %d (HS)",getBrickCount(),getBallCount(),score));
+            }else{
+                gameboard.setMessage(String.format("Bricks: %d     Balls: %d     Score: %d",getBrickCount(),getBallCount(),score));
+            }
+            if(isBallLost()){
+                if(ballEnd()){
+                    highscore.updateScores(score);
+                    gameboard.setstopReceivingInput(true);
+                    gameboard.setshowEndScreen(true);
+                    gameboard.setMessage("GAME OVER");
+                    ballReset();
+                }
+                ballReset();
+                gameTimer.stop();
+            }
+            else if(isDone()){
+                if(hasLevel()){
+                    gameboard.setMessage("Next Level, press [SPACE] to continue");
+                    gameboard.setgameHasStarted(false);
+                    gameTimer.stop();
+                    ballReset();
+                    nextLevel();
+                    wallReset();
+                    
+                }
+                else{
+                    highscore.updateScores(score);
+                    gameboard.setMessage("ALL gamecontrollerS DESTROYED");
+                    gameboard.setstopReceivingInput(true);
+                    gameboard.setshowEndScreen(true);
+                    ballReset();
+                }
+            }
+
+            if(owner.getGaming()==false){
+                gameboard.onLostFocus();
+            }
+            gameboard.repaint();
+        });
 
     }
 
@@ -219,7 +275,7 @@ public class Wall {
             ball.reverseY();
         }
         else if(impactWall()){
-            gameboard.setScore();
+            upScore();
             brickCount--;
         }
         else if(((ball.getPosition().getX() < area.getX()) || (ball.getPosition().getX() > area.getX() + area.getWidth())) && bbcheckx==0) {
@@ -315,7 +371,7 @@ public class Wall {
      * Method that resets the wall to it's unbroken state.
      */
     public void wallReset(){
-        gameboard.resetScore();
+        resetScore();
         for(Brick b : bricks)
             b.repair();
         brickCount = bricks.length;
@@ -345,7 +401,7 @@ public class Wall {
      * Method that changes the wall to the wall of the next level.
      */
     public void nextLevel(){
-        gameboard.setResetscrore();
+        setResetscrore();
         if(level <LEVELS_COUNT){
         bricks = levels[level++];
         this.brickCount = bricks.length;
@@ -390,7 +446,49 @@ public class Wall {
         ballCount = 3;
     }
 
+    public void start(){
+        gameTimer.start();
+    }
+
+    public void stop(){
+        gameTimer.stop();
+    }
+
+    public boolean getisRunning(){
+        return gameTimer.isRunning();
+    }
+
+    public int getScore(){
+        return score;
+    }
+
+    public void setScore(int value){
+        score=value;
+    }
+
+    /**
+     * Method that increases the score by a 100 everytime a brick is broken.
+     */
+    public void upScore(){
+        score+=100;
+    }
     
+    /**
+     * Method that defines the reset score. 
+     * The reset score is defined as the maximum score of the previous level or 0.
+     */
+    public void setResetscrore(){
+        resetScore = score;
+    }
+
+    /**
+     * Method that resets the score to the resetscore.
+     * This method is called everytime the player resets the level.
+     */
+    public void resetScore(){
+        score = resetScore;
+    }
+
     /** 
      * Method that makes the bricks.
      * 
