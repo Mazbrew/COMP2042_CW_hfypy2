@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.awt.Point;
 import java.awt.Rectangle;
 
-import com.game.player.Player;
+import com.game.Models.player.Player;
 
 import org.junit.Test;
 

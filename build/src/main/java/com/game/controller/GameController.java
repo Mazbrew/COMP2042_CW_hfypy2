@@ -4,15 +4,17 @@ import java.awt.*;
 
 import javax.swing.Timer;
 
-import com.game.ball.Ball;
-import com.game.brick.*;
-import com.game.highscore.Highscore;
-import com.game.player.Player;
+import com.game.Models.ball.Ball;
+import com.game.Models.brick.*;
+import com.game.Models.highscore.Highscore;
+import com.game.Models.player.Player;
 import com.game.views.*;
 
 
 /**
  * Class that handles all of the game logic.
+ * This used to be named Wall.java.
+ * 
  */
 public class GameController {
 
@@ -412,7 +414,7 @@ public class GameController {
     /** 
      * Method that checks if a next level exists.
      * 
-     * @return Returns true if there exist a level beyond the current one else false.s
+     * @return Returns true if there exist a level beyond the current one else false.
      */
     public boolean hasLevel(){
         return level < levels.length;

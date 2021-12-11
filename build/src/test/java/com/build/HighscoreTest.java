@@ -3,7 +3,8 @@ package com.build;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
-import com.game.highscore.Highscore;
+import com.game.Models.highscore.Highscore;
+
 import org.junit.Test;
 
 /**
