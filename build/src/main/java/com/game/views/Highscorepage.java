@@ -26,12 +26,14 @@ public class HighscorePage extends JLayeredPane{
 
     private int[] scores;
     private String scoredisplay ="";
+    private Highscore highscore;
 
-    public HighscorePage(GameFrame owner,Highscore highscore){
+    public HighscorePage(GameFrame owner){
         this.setFocusable(true);
         this.requestFocusInWindow();
         this.setLayout(null);
         this.setSize(600,450);
+        highscore = new Highscore();
 
         background.setBounds(0,0,600,450);
         background.setIcon(highscorepage);

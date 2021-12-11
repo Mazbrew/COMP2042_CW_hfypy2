@@ -61,7 +61,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private static boolean gameHasStarted;
     private boolean stopReceivingInput;
 
-    public GameBoard(GameFrame owner,Highscore highscore){
+    public GameBoard(GameFrame owner){
         super();
 
         strLen = 0;
@@ -72,7 +72,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         
 
         this.owner= owner;
-        this.highscore = highscore;
+        highscore = new Highscore();
 
         menuFont = new Font("Monospaced",Font.PLAIN,TEXT_SIZE);
         

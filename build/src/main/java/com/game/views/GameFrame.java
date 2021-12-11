@@ -2,8 +2,6 @@ package com.game.views;
 
 import javax.swing.*;
 
-import com.game.highscore.Highscore;
-
 import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
@@ -21,14 +19,11 @@ public class GameFrame extends JFrame implements WindowFocusListener {
     private static HomeMenu homeMenu;
     private static InfoPage infopage;
     private static HighscorePage highscorepage;
-    private static Highscore highscore;
 
     private static boolean gaming;
 
     public GameFrame(){
         super();
-        highscore = new Highscore();
-        
         
         homeMenu = new HomeMenu(this);
         this.add(homeMenu);
@@ -55,7 +50,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
      * Method that enables the GameBoard and removes the HomeMenu.
      */
     public void enableGameBoard(){
-        gameBoard = new GameBoard(this,highscore);
+        gameBoard = new GameBoard(this);
         this.add(gameBoard,BorderLayout.CENTER);
         this.remove(homeMenu);
         
@@ -98,7 +93,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
      * Method that enables the HighscorePage and remvoes the HomeMenu.
      */
     public void enableHighscore(){
-        highscorepage = new HighscorePage(this,highscore);
+        highscorepage = new HighscorePage(this);
         this.add(highscorepage,BorderLayout.CENTER);
         this.remove(homeMenu);
         
